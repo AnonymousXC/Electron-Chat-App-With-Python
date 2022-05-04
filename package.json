@@ -1,0 +1,20 @@
+{
+  "name": "electron-chat-app-with-python",
+  "version": "1.7.0",
+  "description": "A chat app made on electron with python integration.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "npm start",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnonymousXC/Electron-Chat-App-With-Python.git"
+  },
+  "author": "AnonymousXC && Falconic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnonymousXC/Electron-Chat-App-With-Python/issues"
+  },
+  "homepage": "https://github.com/AnonymousXC/Electron-Chat-App-With-Python#readme"
+}
