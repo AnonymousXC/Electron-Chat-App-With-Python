@@ -4,7 +4,7 @@
   "description": "A chat app made on electron with python integration.",
   "main": "src/index.ts",
   "scripts": {
-    "test": "npm start",
+    "test": "electron src/index.js",
     "start": "electron ."
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AnonymousXC/Electron-Chat-App-With-Python/issues"
   },
-  "homepage": "https://github.com/AnonymousXC/Electron-Chat-App-With-Python#readme"
+  "homepage": "https://github.com/AnonymousXC/Electron-Chat-App-With-Python#readme",
+  "dependencies": {
+    "python-shell": "^3.0.1"
+  }
 }
