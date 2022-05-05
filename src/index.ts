@@ -9,8 +9,7 @@ function createWindow() {
             nodeIntegration: true,
             enableRemoteModule: true
         },
-        // icon: path.join(__dirname, 'assets', 'img', 'icon.png'),
-        title: 'My App',
+        title: 'Chat App',
     });
 
     win.setTitle('Chat App');
