@@ -13,8 +13,7 @@ function createWindow() {
         title: 'My App',
     });
 
-    win.setTitle('Chat App');
-    win.removeMenu();
+    win.setTitle('My App');
     win.loadFile(path.join(__dirname, "html", "index.html"));
     win.webContents.openDevTools();
 }
