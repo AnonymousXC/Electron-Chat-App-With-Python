@@ -1,0 +1,3 @@
+https://icons.getbootstrap.com/icons/list/
+https://icons.getbootstrap.com/icons/x-lg/
+https://icons.getbootstrap.com/icons/fullscreen/
