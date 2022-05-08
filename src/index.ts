@@ -9,9 +9,9 @@ function createWindow() {
         height: 600,
         width: 800,
         frame: false,
+        transparent: false,
         webPreferences: {
             nodeIntegration: true,
-            enableRemoteModule: true,
             preload: path.join(__dirname, "preload" , "mainPreload.js")
         },
         title: 'Chat App',
@@ -37,14 +37,16 @@ app.on('activate', () => {
     }
 });
 
+
+
 ipcMain.on("closeWindow", (e) => {
     app.quit()
-})
+});
 
 ipcMain.on("minimizeWindow", (e) => {
     BrowserWindow.getFocusedWindow().minimize()
-})
+});
 
 ipcMain.on("maximizeWindow", (e) => {
     BrowserWindow.getFocusedWindow().isMaximized() ? BrowserWindow.getFocusedWindow().unmaximize() : BrowserWindow.getFocusedWindow().maximize()
-})
+});

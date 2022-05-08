@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../resources/icons/emoji-sunglasses-fill.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/titlebar.js" defer></script>
+    <script src="../js/mainRenderer.js" defer></script>
     <title>Chat App</title>
 </head>
 <body>
     <div id="titleBar">
         <div class="leftItems">
-            <button class="barBtn">
+            <button class="barBtn" onclick="toggleSideBar()">
                 <i class="bi bi-list"></i>
             </button>
+            <img class="icon">
+            <p></p>
         </div>
         <div class="rightItems">
             <button class="barBtn" onclick="minWindow()">
@@ -29,7 +32,10 @@
         </div>
     </div>
     <div class="app">
-        <H1>Testing 1 Passed </H1>
+        <div class="side-bar">
+        </div>
+        <div class="mainChat">
+        </div>
     </div>
 </body>
 </html>

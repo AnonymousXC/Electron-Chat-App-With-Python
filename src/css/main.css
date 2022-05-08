@@ -3,9 +3,13 @@ html, * {
     padding: 0;
     --bg-main: #181818;
     --titlebar-bg: #1b1d23;
-    --titlebar-btn-color: #949aa7;
+    --border-color: #343b4b;
+    --sidebar-bg: #272c36;
+    --text-color: #949aa7;
     --complementary-color: #4f9fee;
 }
+
+/* Title Bar Styles */
 
 #titleBar {
     width: 100vw;
@@ -15,6 +19,7 @@ html, * {
     top: 0;
     display: flex;
     justify-content: space-between;
+    border-bottom: 4px solid  var(--border-color);
     -webkit-user-select: none;
     -webkit-app-region: drag;
 }
@@ -30,7 +35,7 @@ html, * {
 }
 
 .barBtn > i {
-    color: var(--titlebar-btn-color);
+    color: var(--text-color);
     font-size: 25px;
 }
 
@@ -40,4 +45,63 @@ html, * {
 
 .rightItems > button:last-child:hover{
     background-color: var(--complementary-color);
+}
+
+.rightItems {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.leftItems {
+    display: flex;
+    align-items: center;
+    -webkit-app-region: no-drag;
+}
+
+.leftItems > p {
+    color: var(--text-color);
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.icon {
+    width: auto;
+    height: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Side bar Styles */
+
+.side-bar {
+    position: absolute;
+    width: 35vw;
+    min-width: 100px;
+    height: calc(100% - 39px);
+    background-color: var(--sidebar-bg);
+    z-index: -2;
+    border-right: 4px solid var(--border-color);
+    left: 0;
+}
+
+
+/* Main App Styles */
+
+.mainChat {
+    position: absolute;
+    height: calc(100% - 39px);
+    width: calc(100% - 35vw - 4px);
+    background-color: #1b1d23;
+    right: 0;
+    bottom: 0;
+}
+
+@media screen and (min-width: 1000px){
+    .side-bar {
+        width: 350px;
+    }
+    .mainChat {
+        width: calc(100% - 354px);
+    }
 }

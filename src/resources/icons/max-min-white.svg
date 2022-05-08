@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333335"
+   version="1.1"
+   id="svg886"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="max-min-white.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview888"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="16mm"
+     units="px"
+     inkscape:zoom="30.217733"
+     inkscape:cx="8.653859"
+     inkscape:cy="9.0509769"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox="true" />
+  <defs
+     id="defs883">
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect1035"
+       is_visible="true"
+       lpeversion="1"
+       offset_points="0,1"
+       not_jump="false"
+       sort_points="true"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       scale_width="1"
+       end_linecap_type="zerowidth" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2213"
+       style="fill:none;stroke:#949aa7;stroke-width:0.901157;paint-order:stroke fill markers"
+       d="M 3.3925781 0.45117188 L 3.3925781 3.3925781 L 12.607422 3.3925781 L 12.607422 12.607422 L 15.548828 12.607422 L 15.548828 0.45117188 L 3.3925781 0.45117188 z "
+       transform="scale(0.26458333)" />
+    <path
+       id="path1566"
+       style="fill:none;stroke:#949aa7;stroke-width:0.238431;paint-order:stroke fill markers"
+       d="M 0.1192155,0.89750373 H 3.3358296 V 4.1141178 H 0.1192155 Z" />
+  </g>
+</svg>
