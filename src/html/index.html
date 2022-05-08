@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/mainRenderer.js" defer></script>
+    <script src="../js/titlebar.js" defer></script>
     <title>Chat App</title>
 </head>
 <body>
-    <H1>Testing 1 Passed </H1>
+    <div id="titleBar">
+        <div class="leftItems">
+            <button class="barBtn">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <div class="rightItems">
+            <button class="barBtn" onclick="minWindow()">
+                <img src="../resources/icons/min-white.svg">
+            </button>
+            <button class="barBtn" onclick="maxWindow()">
+                <img src="../resources/icons/max-white.svg" alt="">
+            </button>
+            <button class="barBtn" onclick="closeWindow()">
+                <img src="../resources/icons/x-lg.svg">
+            </button>
+        </div>
+    </div>
+    <div class="app">
+        <H1>Testing 1 Passed </H1>
+    </div>
 </body>
 </html>

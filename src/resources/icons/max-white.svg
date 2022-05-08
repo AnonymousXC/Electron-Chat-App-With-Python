@@ -26,7 +26,7 @@
      units="px"
      width="16px"
      inkscape:zoom="7.5544332"
-     inkscape:cx="-8.8027782"
+     inkscape:cx="-8.9351508"
      inkscape:cy="10.523622"
      inkscape:window-width="1366"
      inkscape:window-height="715"
@@ -40,19 +40,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <g
-       id="g1058"
-       transform="translate(-329.93542,-3.1750462)">
-      <path
-         fill-rule="evenodd"
-         d="m 334.11694,3.2268596 a 0.17636262,0.17636262 0 0 1 0,0.2497294 l -3.87998,3.8799777 a 0.1765856,0.1765856 0 0 1 -0.24973,-0.2497295 l 3.87998,-3.8799776 a 0.17636262,0.17636262 0 0 1 0.24973,0 z"
-         id="path17610"
-         style="fill:#949aa7;fill-opacity:1;stroke-width:0.352725" />
-      <path
-         fill-rule="evenodd"
-         d="m 329.98723,3.2268596 a 0.17636262,0.17636262 0 0 0 0,0.2497294 l 3.87998,3.8799777 a 0.1765856,0.1765856 0 0 0 0.24973,-0.2497295 l -3.87998,-3.8799776 a 0.17636262,0.17636262 0 0 0 -0.24973,0 z"
-         id="path17612"
-         style="fill:#949aa7;fill-opacity:1;stroke-width:0.352725" />
-    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#949aa7;stroke-width:0.29214;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect17394"
+       width="3.9411929"
+       height="3.9411929"
+       x="0.14607"
+       y="0.14607" />
   </g>
 </svg>

@@ -3,8 +3,8 @@
 
 <svg
    width="16"
-   height="16"
-   viewBox="0 0 4.2333333 4.2333335"
+   height="1.449"
+   viewBox="0 0 4.2333333 0.38338127"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
@@ -40,19 +40,9 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <g
-       id="g1058"
-       transform="translate(-329.93542,-3.1750462)">
-      <path
-         fill-rule="evenodd"
-         d="m 334.11694,3.2268596 a 0.17636262,0.17636262 0 0 1 0,0.2497294 l -3.87998,3.8799777 a 0.1765856,0.1765856 0 0 1 -0.24973,-0.2497295 l 3.87998,-3.8799776 a 0.17636262,0.17636262 0 0 1 0.24973,0 z"
-         id="path17610"
-         style="fill:#949aa7;fill-opacity:1;stroke-width:0.352725" />
-      <path
-         fill-rule="evenodd"
-         d="m 329.98723,3.2268596 a 0.17636262,0.17636262 0 0 0 0,0.2497294 l 3.87998,3.8799777 a 0.1765856,0.1765856 0 0 0 0.24973,-0.2497295 l -3.87998,-3.8799776 a 0.17636262,0.17636262 0 0 0 -0.24973,0 z"
-         id="path17612"
-         style="fill:#949aa7;fill-opacity:1;stroke-width:0.352725" />
-    </g>
+    <path
+       style="fill:none;stroke:#949aa7;stroke-width:0.383325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0,0.19169063 H 4.2345809"
+       id="path18183" />
   </g>
 </svg>

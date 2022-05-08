@@ -1,13 +1,18 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require("path")
 
+
+let win;
+
 function createWindow() {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         height: 600,
         width: 800,
+        frame: false,
         webPreferences: {
             nodeIntegration: true,
-            enableRemoteModule: true
+            enableRemoteModule: true,
+            preload: path.join(__dirname, "preload" , "mainPreload.js")
         },
         title: 'Chat App',
     });
@@ -31,3 +36,15 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+ipcMain.on("closeWindow", (e) => {
+    app.quit()
+})
+
+ipcMain.on("minimizeWindow", (e) => {
+    BrowserWindow.getFocusedWindow().minimize()
+})
+
+ipcMain.on("maximizeWindow", (e) => {
+    BrowserWindow.getFocusedWindow().isMaximized() ? BrowserWindow.getFocusedWindow().unmaximize() : BrowserWindow.getFocusedWindow().maximize()
+})

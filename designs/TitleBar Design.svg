@@ -25,9 +25,9 @@
      showgrid="false"
      units="px"
      width="1280px"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="225.56706"
-     inkscape:cy="309.00566"
+     inkscape:zoom="2"
+     inkscape:cx="39.75"
+     inkscape:cy="53.25"
      inkscape:window-width="1366"
      inkscape:window-height="715"
      inkscape:window-x="-8"
@@ -102,63 +102,54 @@
        transform="scale(0.26458334)"
        id="text9062"
        style="line-height:0.25;font-family:sans-serif;font-size:2.2px;white-space:pre;shape-inside:url(#rect9064)" />
+    <rect
+       style="fill:#1b1d23;fill-opacity:1;stroke:none;stroke-width:0.304535;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect1264"
+       width="338.66669"
+       height="10.583334"
+       x="1.2186044e-06"
+       y="3.1249997e-06" />
     <g
        style="fill:#949aa7;fill-opacity:1"
-       id="g17622"
-       transform="matrix(0.35272524,0,0,0.35272524,329.23028,2.9990779)">
-      <g
-         id="g995"
-         transform="translate(0,-1.5002234)">
-        <rect
-           style="fill:#1b1d23;fill-opacity:1;stroke:none;stroke-width:0.304535;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-           id="rect1264"
-           width="338.66669"
-           height="10.583334"
-           x="0"
-           y="3.1249997e-06"
-           transform="matrix(2.8350679,0,0,2.8350679,-933.39019,-7.002375)" />
-        <g
-           style="fill:#ffffff;fill-opacity:1"
-           id="g1468"
-           transform="matrix(1.7047994,0,0,1.7047994,-931.78302,-5.6385261)">
-          <path
-             fill-rule="evenodd"
-             d="M 2.5,12 A 0.5,0.5 0 0 1 3,11.5 h 10 a 0.5,0.5 0 0 1 0,1 H 3 A 0.5,0.5 0 0 1 2.5,12 Z m 0,-4 A 0.5,0.5 0 0 1 3,7.5 h 10 a 0.5,0.5 0 0 1 0,1 H 3 A 0.5,0.5 0 0 1 2.5,8 Z m 0,-4 A 0.5,0.5 0 0 1 3,3.5 h 10 a 0.5,0.5 0 0 1 0,1 H 3 A 0.5,0.5 0 0 1 2.5,4 Z"
-             id="path1459"
-             style="fill:#ffffff;fill-opacity:1" />
-        </g>
-        <path
-           d="M 8,16 A 8,8 0 1 0 8,0 8,8 0 0 0 8,16 Z M 2.31,5.243 A 1,1 0 0 1 3.28,4 H 6 A 1,1 0 0 1 7,5 V 5.116 A 4.22,4.22 0 0 1 8,5 C 8.35,5 8.69,5.04 9,5.116 V 5 a 1,1 0 0 1 1,-1 h 2.72 a 1,1 0 0 1 0.97,1.243 L 13.379,6.485 A 2,2 0 0 1 11.439,8 H 11 A 2,2 0 0 1 9.006,6.161 2.99,2.99 0 0 0 8,6 C 7.607,6 7.26,6.064 6.994,6.161 A 2,2 0 0 1 5,8 H 4.562 A 2,2 0 0 1 2.622,6.485 Z M 4.969,9.75 A 3.498,3.498 0 0 0 8,11.5 3.498,3.498 0 0 0 11.032,9.75 0.5,0.5 0 1 1 11.898,10.25 4.498,4.498 0 0 1 8,12.5 4.498,4.498 0 0 1 4.102,10.25 0.5,0.5 0 0 1 4.968,9.75 Z"
-           id="path1621"
-           style="fill:#949aa7;fill-opacity:1"
-           transform="matrix(1.1720496,0,0,1.1720496,-896.42157,-1.3765278)" />
-        <text
-           xml:space="preserve"
-           transform="matrix(0.75011172,0,0,0.75011172,-933.39019,-5.5536553)"
-           id="text2586"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;line-height:0.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect2588);fill:#949aa7;fill-opacity:1"><tspan
-             x="87.365234"
-             y="23.35383"
-             id="tspan8930">Chat App</tspan></text>
-        <rect
-           style="fill:none;fill-opacity:1;stroke:#949aa7;stroke-width:0.29214;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-           id="rect17394"
-           width="3.9411929"
-           height="3.9411929"
-           x="320.02737"
-           y="3.3210738"
-           transform="matrix(2.8350679,0,0,2.8350679,-933.39019,-7.002375)" />
-        <path
-           fill-rule="evenodd"
-           d="m 13.854,2.146 a 0.5,0.5 0 0 1 0,0.708 l -11,11 A 0.5006316,0.5006316 0 0 1 2.146,13.146 l 11,-11 a 0.5,0.5 0 0 1 0.708,0 z"
-           id="path17610"
-           style="fill:#949aa7;fill-opacity:1" />
-        <path
-           fill-rule="evenodd"
-           d="m 2.146,2.146 a 0.5,0.5 0 0 0 0,0.708 l 11,11 a 0.5006316,0.5006316 0 0 0 0.708,-0.708 l -11,-11 a 0.5,0.5 0 0 0 -0.708,0 z"
-           id="path17612"
-           style="fill:#949aa7;fill-opacity:1" />
-      </g>
+       id="g1468"
+       transform="matrix(0.60132578,0,0,0.60132578,0.56689064,0.48106073)">
+      <path
+         fill-rule="evenodd"
+         d="M 2.5,12 A 0.5,0.5 0 0 1 3,11.5 h 10 a 0.5,0.5 0 0 1 0,1 H 3 A 0.5,0.5 0 0 1 2.5,12 Z m 0,-4 A 0.5,0.5 0 0 1 3,7.5 h 10 a 0.5,0.5 0 0 1 0,1 H 3 A 0.5,0.5 0 0 1 2.5,8 Z m 0,-4 A 0.5,0.5 0 0 1 3,3.5 h 10 a 0.5,0.5 0 0 1 0,1 H 3 A 0.5,0.5 0 0 1 2.5,4 Z"
+         id="path1459"
+         style="fill:#949aa7;fill-opacity:1" />
+    </g>
+    <path
+       d="m 16.347059,8.5989588 a 3.3072919,3.3072919 0 1 0 0,-6.6145837 3.3072919,3.3072919 0 0 0 0,6.6145837 z M 13.994748,4.1518915 A 0.41341148,0.41341148 0 0 1 14.395757,3.638021 h 1.124479 a 0.41341148,0.41341148 0 0 1 0.413411,0.4134115 v 0.047956 a 1.7445964,1.7445964 0 0 1 0.413412,-0.047956 c 0.144694,0 0.285254,0.016536 0.413411,0.047956 V 4.0514325 A 0.41341148,0.41341148 0 0 1 17.173882,3.638021 h 1.124479 a 0.41341148,0.41341148 0 0 1 0.401009,0.5138705 l -0.128571,0.513457 A 0.82682296,0.82682296 0 0 1 17.768781,5.2916669 H 17.587293 A 0.82682296,0.82682296 0 0 1 16.762951,4.5314032 1.2361003,1.2361003 0 0 0 16.347059,4.464844 c -0.162471,0 -0.305925,0.026458 -0.415892,0.066559 A 0.82682296,0.82682296 0 0 1 15.106824,5.2916669 H 14.92575 A 0.82682296,0.82682296 0 0 1 14.123732,4.6653485 Z m 1.099261,1.8632455 a 1.4461134,1.4461134 0 0 0 1.25305,0.7234701 1.4461134,1.4461134 0 0 0 1.253463,-0.7234701 0.20670574,0.20670574 0 1 1 0.358015,0.2067058 1.8595248,1.8595248 0 0 1 -1.611478,0.9301758 1.8595248,1.8595248 0 0 1 -1.611478,-0.9301758 0.20670574,0.20670574 0 0 1 0.358014,-0.2067058 z"
+       id="path1621"
+       style="fill:#949aa7;fill-opacity:1;stroke-width:0.413411" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458334,0,0,0.26458334,1.2186044e-6,0.5109968)"
+       id="text2586"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;line-height:0.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect2588);fill:#949aa7;fill-opacity:1"><tspan
+         x="87.365234"
+         y="23.35383"
+         id="tspan1222">Chat App</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#949aa7;stroke-width:0.29214;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect17394"
+       width="3.9411929"
+       height="3.9411929"
+       x="320.02737"
+       y="3.3210738" />
+    <g
+       id="g1058">
+      <path
+         fill-rule="evenodd"
+         d="m 334.11694,3.2268596 a 0.17636262,0.17636262 0 0 1 0,0.2497294 l -3.87998,3.8799777 a 0.1765856,0.1765856 0 0 1 -0.24973,-0.2497295 l 3.87998,-3.8799776 a 0.17636262,0.17636262 0 0 1 0.24973,0 z"
+         id="path17610"
+         style="fill:#949aa7;fill-opacity:1;stroke-width:0.352725" />
+      <path
+         fill-rule="evenodd"
+         d="m 329.98723,3.2268596 a 0.17636262,0.17636262 0 0 0 0,0.2497294 l 3.87998,3.8799777 a 0.1765856,0.1765856 0 0 0 0.24973,-0.2497295 l -3.87998,-3.8799776 a 0.17636262,0.17636262 0 0 0 -0.24973,0 z"
+         id="path17612"
+         style="fill:#949aa7;fill-opacity:1;stroke-width:0.352725" />
     </g>
     <path
        style="fill:none;stroke:#949aa7;stroke-width:0.383268;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -245,6 +236,6 @@
        style="font-size:30px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6650)"><tspan
          x="82"
          y="158.36991"
-         id="tspan8932">Hover</tspan></text>
+         id="tspan1224">Hover</tspan></text>
   </g>
 </svg>
