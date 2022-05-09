@@ -32,6 +32,7 @@ html, * {
     outline: none !important;
     user-select: none;
     -webkit-app-region: no-drag;
+    transition: all 250ms;
 }
 
 .barBtn > i {
@@ -45,6 +46,10 @@ html, * {
 
 .rightItems > button:last-child:hover{
     background-color: var(--complementary-color);
+}
+
+.rightItems > button:last-child:hover > img {
+    content: url("../resources/icons/x-lg-black.svg");
 }
 
 .rightItems {
@@ -65,10 +70,12 @@ html, * {
     padding-left: 5px;
 }
 
+
 .icon {
     width: auto;
     height: 25px;
     padding-left: 8px;
     padding-right: 8px;
 }
+
 

@@ -11,6 +11,7 @@
     <script src="../js/mainRenderer.js" defer></script>
     <script src="../js/titlebar/injectTitlebar.js" defer></script>
     <script src="../js/titlebar/titlebar.js" defer></script>
+    <script src="../js/tabs.js" defer></script>
     <title>Chat App</title>
 </head>
 <body>
@@ -36,8 +37,19 @@
     </div> -->
     <div class="app">
         <div class="side-bar">
+            <button class="tablinks" id="defaultTab" onclick="openTab(event, 'News')">News</button> <br>
+            <button class="tablinks" onclick="openTab(event, 'globalChat')">Global Chat</button>
         </div>
         <div class="mainChat">
+            <div id="News" class="tabcontent">
+                <h3>News Headlines</h3>
+                <p>This is news News</p>
+              </div>
+              
+              <div id="globalChat" class="tabcontent">
+                <h3>Global Chat</h3>
+                <p>This is global chat.</p>
+              </div>
         </div>
     </div>
 </body>
