@@ -11,7 +11,7 @@ function createWindow() {
         frame: false,
         transparent: false,
         webPreferences: {
-            nodeIntegration: true,
+            // nodeIntegration: true,
             preload: path.join(__dirname, "preload" , "mainPreload.js")
         },
         title: 'Chat App',
@@ -50,3 +50,7 @@ ipcMain.on("minimizeWindow", (e) => {
 ipcMain.on("maximizeWindow", (e) => {
     BrowserWindow.getFocusedWindow().isMaximized() ? BrowserWindow.getFocusedWindow().unmaximize() : BrowserWindow.getFocusedWindow().maximize()
 });
+
+ipcMain.handle("isMax", async (e, args) => {
+    return BrowserWindow.getFocusedWindow().isMaximized().valueOf()
+})

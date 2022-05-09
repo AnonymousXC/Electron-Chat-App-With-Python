@@ -1,5 +1,6 @@
 let sideBar = document.getElementsByClassName("side-bar")
 let mainChat = document.getElementsByClassName("mainChat")[0]
+let maxBtnImg = document.getElementById("maxBtn")
 
 
 
@@ -16,6 +17,14 @@ function minWindow() {
 }
 
 function maxWindow() {
+    window.appApi.isMax().then((args) => {
+        if(args == false) {
+            maxBtnImg.setAttribute("src", "../resources/icons/max-min-white.svg")
+        }
+        else if(args == true) {
+            maxBtnImg.setAttribute("src", "../resources/icons/max-white.svg")
+        }
+    })
     window.appApi.maxWin()
 }
 
