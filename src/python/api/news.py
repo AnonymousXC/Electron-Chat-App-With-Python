@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 page = 0
 
@@ -43,11 +44,15 @@ def load_article(api_key, search="World"):
 
 
 if __name__ == "__main__":
+    search = sys.argv[0]
+
+    if search == "":
+        search = "world"
 
     with open("src\\python\\api\\api_keys.json") as f:
         data = json.load(f)
 
     api_key = data["Nyt"]
 
-    for contents in load_article(api_key):
+    for contents in load_article(api_key, search=search):
         print(contents)
