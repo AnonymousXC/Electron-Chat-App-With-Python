@@ -39,5 +39,6 @@ window.onload = (e) => {
             break
     }
     document.getElementsByClassName("icon")[0].setAttribute("src", iconPath)
+    getNews()
 
 }
