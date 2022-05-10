@@ -25,9 +25,7 @@ async function dynamicMaxBtn() {
     })
 }
 
-window.onresize = () => {
-    dynamicMaxBtn()
-}
+
 
 window.onload = (e) => {
     let title = document.querySelector("p")

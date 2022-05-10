@@ -48,5 +48,9 @@ let _TitleBar = `
 
 if(filename == "index.html")
     document.body.insertAdjacentHTML("afterbegin", _TitleBar)
-else
+else {
     document.body.insertAdjacentHTML("afterbegin", comBar)
+    window.onresize = () => {
+        dynamicMaxBtn()
+    }
+}

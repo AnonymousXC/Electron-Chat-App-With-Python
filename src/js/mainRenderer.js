@@ -20,11 +20,22 @@ function toggleSideBar() {
     }
 }
 
-window.onresize = (e) => {
-    if(sideBarStyle.left == "0px")
-        mainChat.style.width = `calc(100% - ${sideBarStyle.width} - 4px)`
+window.onresize = () => {
+    let width = sideBarStyle.width
+    if(sideBarStyle.left == "0px") {
+        mainChat.style.width = `calc(100vw - ${width} - 4px)`
+    }
     else
         mainChat.style.width = "100vw"
     dynamicMaxBtn()
 }
 
+function checkOnline() {
+    let isOnline = navigator.onLine
+    if(isOnline == true)
+        return
+}
+
+setInterval(() => {
+    checkOnline()
+}, 2000)
