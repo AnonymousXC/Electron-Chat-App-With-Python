@@ -48,3 +48,6 @@ if __name__ == "__main__":
         data = json.load(f)
 
     api_key = data["Nyt"]
+
+    for contents in load_article(api_key):
+        print(contents)
