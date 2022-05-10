@@ -19,6 +19,7 @@ def content(data):
     web_url = []
     image_url = []
     main_headline = []
+    pub_date = []
     
 
     for i in range(10):
@@ -27,13 +28,14 @@ def content(data):
         lead_paragraph.append(data[i]["lead_paragraph"])
         main_headline.append(data[i]["headline"]["main"])
         author_name.append(data[i]["byline"]["original"])
+        pub_date.append(data[i]["pub_date"])
 
         try:
             image_url.append(website+data[i]["multimedia"][0]["url"])
         except IndexError:
             image_url.append("")
 
-    return abstract, main_headline ,web_url, image_url, author_name
+    return abstract, main_headline ,web_url, image_url, author_name, pub_date
 
 
 def load_article(api_key, search="World"):
