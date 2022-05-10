@@ -8,6 +8,8 @@ function createWindow() {
     win = new BrowserWindow({
         height: 600,
         width: 800,
+        minWidth: 800,
+        minHeight: 600,
         frame: false,
         transparent: false,
         webPreferences: {
@@ -53,4 +55,9 @@ ipcMain.on("maximizeWindow", (e) => {
 
 ipcMain.handle("isMax", async (e, args) => {
     return BrowserWindow.getFocusedWindow().isMaximized().valueOf()
+});
+
+ipcMain.once("offline", () => {
+    BrowserWindow.getFocusedWindow().loadFile(path.join(__dirname, "html", "offline.html"))
 })
+

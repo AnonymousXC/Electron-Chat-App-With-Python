@@ -1,0 +1,74 @@
+html, * {
+    margin: 0;
+    padding: 0;
+    --bg-main: #181818;
+    --titlebar-bg: #1b1d23;
+    --border-color: #343b4b;
+    --sidebar-bg: #272c36;
+    --text-color: #949aa7;
+    --complementary-color: #4f9fee;
+}
+/* Title Bar Styles */
+
+
+#titleBar {
+    width: 100vw;
+    height: 35px;
+    background-color: var(--titlebar-bg);
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid  var(--border-color);
+    user-select: none !important;
+    -webkit-app-region: drag;
+}
+
+.barBtn {
+    background-color: transparent;
+    border: none;
+    width: 38px;
+    height: 35px !important;
+    outline: none !important;
+    user-select: none;
+    -webkit-app-region: no-drag;
+}
+
+.barBtn > i {
+    color: var(--text-color);
+    font-size: 25px;
+}
+
+.barBtn:hover { 
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rightItems > button:last-child:hover{
+    background-color: var(--complementary-color);
+}
+
+.rightItems {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.leftItems {
+    display: flex;
+    align-items: center;
+    -webkit-app-region: no-drag;
+}
+
+.leftItems > p {
+    color: var(--text-color);
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.icon {
+    width: auto;
+    height: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
