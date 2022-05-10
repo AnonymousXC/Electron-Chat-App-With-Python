@@ -34,6 +34,39 @@ html, * {
     bottom: 0;
 }
 
+/* Tabs Style */
+
+.tablinks {
+    position: relative;
+    width: 97%;
+    height: 60px;
+    font-size: 18px;
+    color: var(--text-color);
+    background-color: var(--titlebar-bg);
+    border: none;
+    margin-top: 1.5% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 550ms;
+    user-select: none;
+}
+
+.tablinks:hover {
+    background-color: var(--complementary-color);
+    color: black;
+}
+
+/* Tab Contents Styles */
+
+.tabcontent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: fadeEffect 1s;
+}
+
+/* Main App Media Query */
+
 @media screen and (min-width: 1000px){
     .side-bar {
         width: 350px;
@@ -41,4 +74,11 @@ html, * {
     .mainChat {
         width: calc(100% - 354px);
     }
+}
+
+/* Animations */
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
