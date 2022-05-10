@@ -44,7 +44,7 @@ def load_article(api_key, search="World"):
 
 
 if __name__ == "__main__":
-    search = sys.argv[0]
+    search = sys.argv[1]
 
     if search == "":
         search = "world"
