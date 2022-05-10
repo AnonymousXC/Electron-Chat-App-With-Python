@@ -56,5 +56,5 @@ if __name__ == "__main__":
 
     api_key = data["Nyt"]
 
-    for contents in load_article(api_key, search=search):
-        print(contents)
+    for contents in load_article(api_key, search="world"):
+        print(json.dumps(contents))
