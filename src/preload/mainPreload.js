@@ -1,4 +1,5 @@
 const { contextBridge, ipcRenderer} = require("electron")
+const {PythonShell} = require("python-shell")
 
 
 let appApi = {
@@ -6,7 +7,13 @@ let appApi = {
     closeWin : () =>  ipcRenderer.send("closeWindow" , null),
     minWin: () => ipcRenderer.send("minimizeWindow", null),
     maxWin: () => ipcRenderer.send("maximizeWindow", null),
-    isMax: (args) => ipcRenderer.invoke("isMax", args)
+    isMax: (args) => ipcRenderer.invoke("isMax", args),
+    pythonRun: (path, args) => {
+        PythonShell.run(path, args, (err, res) =>  {
+            if(err) throw err;
+            window.postMessage(res, "*")
+        })
+    },
 }
 
 

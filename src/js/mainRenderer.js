@@ -1,5 +1,7 @@
+
 let sideBar = document.getElementsByClassName("side-bar")
 let mainChat = document.getElementsByClassName("mainChat")[0]
+let newsDiv = document.getElementById("News")
 
 let sideBarStyle = window.getComputedStyle(sideBar[0])
 let bodyStyle = window.getComputedStyle(document.body)
@@ -39,3 +41,51 @@ function checkOnline() {
 setInterval(() => {
     checkOnline()
 }, 2000)
+
+
+function getNews() {
+    let path = "src/python/api/news.py"
+    let options = {
+        mode: 'json',
+        args: [""],
+        pythonOptions: ['-u'],
+    }
+    window.appApi.pythonRun(path, options)
+}
+
+
+// function openNewsInWindow(url) {
+//     this.getAttribute("data-url")
+// }
+
+
+
+async function addNews(e) {
+    let abstract = e.data[0]
+    let newsHeadlines = e.data[1]
+    let webUrl = e.data[2]
+    let imgUrl = e.data[3]
+    let author = e.data[4]
+    for (let i = 0; i < abstract.length; i++) {
+        const el = abstract[i];
+        let code = `
+        <div class="newsTab" data-url="${webUrl[i]}">
+        <div>
+            <img src="${imgUrl[i]}"></img>
+            <div>
+                <h3>${newsHeadlines[i]}</h3>
+                <p>${abstract[i]}</p>
+            </div>
+        </div>
+    </div>
+        `
+        await newsDiv.insertAdjacentHTML("beforeend", code)
+    }
+}
+
+
+window.onmessage = async (e) => {
+    if(e.source !== window) return
+    addNews(e)
+    console.table(e.data)
+}

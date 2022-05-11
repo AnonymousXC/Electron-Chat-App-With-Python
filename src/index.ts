@@ -59,5 +59,4 @@ ipcMain.handle("isMax", async (e, args) => {
 
 ipcMain.once("offline", () => {
     BrowserWindow.getFocusedWindow().loadFile(path.join(__dirname, "html", "offline.html"))
-})
-
+});

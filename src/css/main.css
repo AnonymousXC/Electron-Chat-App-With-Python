@@ -65,6 +65,48 @@ html, * {
     animation: fadeEffect 1s;
 }
 
+/* News Style */
+#News {
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: normal;
+}
+
+.newsTab {
+    display: flex;
+    align-items: center;
+    width: 96%;
+    height: 220px;
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    margin-top: 10px !important;
+    margin: 0 auto;
+    overflow: hidden;
+    color: white;
+    transition: all 250ms;
+    cursor: pointer;
+}
+
+.newsTab > div {
+    padding-left: 10px;
+}
+
+.newsTab > div > img {
+    height: 200px;
+    width: auto;
+    float: left;
+}
+
+.newsTab > div > div  {
+    padding-left: 310px;
+}
+
+.newsTab:hover {
+    background-color: var(--complementary-color);
+    color: black;
+    scale: 1.02;
+}
+
 /* Main App Media Query */
 
 @media screen and (min-width: 1000px){
