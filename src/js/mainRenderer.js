@@ -54,9 +54,10 @@ function getNews() {
 }
 
 
-// function openNewsInWindow(url) {
-//     this.getAttribute("data-url")
-// }
+function openNewsInWindow(e) {
+    let url = e.dataset.url
+    window.appApi.openNewsInWin(url)
+}
 
 
 
@@ -69,7 +70,7 @@ async function addNews(e) {
     for (let i = 0; i < abstract.length; i++) {
         const el = abstract[i];
         let code = `
-        <div class="newsTab" data-url="${webUrl[i]}">
+        <div class="newsTab" data-url="${webUrl[i]}" onclick="openNewsInWindow(this)">
         <div>
             <img src="${imgUrl[i]}"></img>
             <div>
