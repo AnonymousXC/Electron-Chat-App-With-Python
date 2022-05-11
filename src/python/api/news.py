@@ -2,9 +2,9 @@ import requests
 import json
 import sys
 
-page = 0
 
-def article_search(api_key, search="World"):
+
+def article_search(api_key, search="World", page=1):
     
     parameter = {"page": page, "api-key": api_key, "q": search}
     data = requests.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", params=parameter)
@@ -38,15 +38,19 @@ def content(data):
     return abstract, main_headline ,web_url, image_url, author_name, pub_date
 
 
-def load_article(api_key, search="World"):
-    global page
-    page += 1
-    data = article_search(api_key=api_key, search=search)
+def load_article(api_key, search="World", page=1):
+    data = article_search(api_key=api_key, search=search, page=page)
     return content(data)
 
 
 if __name__ == "__main__":
     search = sys.argv[1]
+    page = sys.argv[2]
+
+    if page == "":
+        page = 1
+    else:
+        page = int(page)
 
     if search == "":
         search = "world"
@@ -56,5 +60,5 @@ if __name__ == "__main__":
 
     api_key = data["Nyt"]
 
-    for contents in load_article(api_key, search="world"):
+    for contents in load_article(api_key, search="world", page=page):
         print(json.dumps(contents))
