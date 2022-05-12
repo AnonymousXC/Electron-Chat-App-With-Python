@@ -40,6 +40,22 @@ app.on('activate', () => {
 });
 
 
+function newNewsWindow(url) {
+    const newsWindow = new BrowserWindow({
+        height: 600,
+        width: 800,
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: false,
+        },
+        icon: path.join(__dirname, 'assets', 'img', 'icon.png'),
+    });
+    newsWindow.removeMenu()
+    newsWindow.webContents.openDevTools()
+    newsWindow.loadFile(path.join(__dirname, "html", "news.html"))
+    newsWindow.loadURL(url)
+}
+
 
 ipcMain.on("closeWindow", (e) => {
     app.quit()
@@ -62,6 +78,6 @@ ipcMain.once("offline", () => {
 });
 
 ipcMain.on("openNewsInWindow", (e, url) => {
-    console.log(url);
+    newNewsWindow(url)
     
 })

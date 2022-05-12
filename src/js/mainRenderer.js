@@ -2,10 +2,12 @@
 let sideBar = document.getElementsByClassName("side-bar")
 let mainChat = document.getElementsByClassName("mainChat")[0]
 let newsDiv = document.getElementById("News")
+let loadStatus = document.getElementById("loading-status")
 
 let sideBarStyle = window.getComputedStyle(sideBar[0])
 let bodyStyle = window.getComputedStyle(document.body)
-
+let canAddData = false
+let newsPage = 0
 
 
 function toggleSideBar() {
@@ -43,11 +45,12 @@ setInterval(() => {
 }, 2000)
 
 
-function getNews() {
+function getNews(page) {
+    loadStatus.style.top = "40px"
     let path = "src/python/api/news.py"
     let options = {
         mode: 'json',
-        args: [""],
+        args: ["", page],
         pythonOptions: ['-u'],
     }
     window.appApi.pythonRun(path, options)
@@ -62,13 +65,13 @@ function openNewsInWindow(e) {
 
 
 async function addNews(e) {
+    if(navigator.onLine == false) return
     let abstract = e.data[0]
     let newsHeadlines = e.data[1]
     let webUrl = e.data[2]
     let imgUrl = e.data[3]
     let author = e.data[4]
     for (let i = 0; i < abstract.length; i++) {
-        const el = abstract[i];
         let code = `
         <div class="newsTab" data-url="${webUrl[i]}" onclick="openNewsInWindow(this)">
         <div>
@@ -76,6 +79,7 @@ async function addNews(e) {
             <div>
                 <h3>${newsHeadlines[i]}</h3>
                 <p>${abstract[i]}</p>
+                <p><strong id="author">${author[i]}</strong></p>
             </div>
         </div>
     </div>
@@ -87,6 +91,15 @@ async function addNews(e) {
 
 window.onmessage = async (e) => {
     if(e.source !== window) return
-    addNews(e)
-    console.table(e.data)
+    addNews(e).then(() => {loadStatus.style.top = "-250px";})
+    canAddData = true
+    newsPage += 10
+}
+
+newsDiv.onscroll = () => {
+    let isBottom = newsDiv.scrollTop === (newsDiv.scrollHeight -newsDiv.offsetHeight) ? true: false
+    if(isBottom === true && canAddData === true) {
+        getNews(newsPage)
+        canAddData = false
+    }
 }

@@ -46,6 +46,7 @@ html, * {
     border: none;
     margin-top: 1.5% !important;
     left: 50%;
+    border-radius: 10px;
     transform: translateX(-50%);
     transition: all 550ms;
     user-select: none;
@@ -75,6 +76,7 @@ html, * {
 .newsTab {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     width: 96%;
     height: 220px;
     background-color: var(--sidebar-bg);
@@ -99,13 +101,68 @@ html, * {
 
 .newsTab > div > div  {
     padding-left: 310px;
+    height: 100%;
+}
+
+.author {
+    position: relative;
+    bottom: 0;
 }
 
 .newsTab:hover {
     background-color: var(--complementary-color);
     color: black;
-    scale: 1.02;
+    transform: scale(1.02);
 }
+
+.search-bar {
+    position: fixed;
+    margin: 4px;
+    margin-right: 4px !important;
+    width: 50%;
+    height: 40px;
+    background-color: #323232;
+    z-index: 5;
+}
+
+
+/* Scroll Bar Styles */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(85, 85, 85);
+} 
+
+
+/* Loading Status Styles */
+#loading-status {
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    width: 100px;
+    height: 20px;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    background-color: var(--complementary-color);
+    display: flex;
+    gap: 10px;
+    transition: all 250ms;
+}
+
+
 
 /* Main App Media Query */
 
@@ -123,4 +180,9 @@ html, * {
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+.load-status {
+    position: relative;
+    bottom: 0 !important;
 }

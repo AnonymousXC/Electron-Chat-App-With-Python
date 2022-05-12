@@ -36,21 +36,33 @@
         </div>
     </div> -->
     <div class="app">
+        <div id="loading-status">
+            <img src="../resources/gifs/cupertino_activity_indicator.gif" alt="" style="width: 20px;">
+            <p>Loading</p>
+        </div>
         <div class="side-bar">
             <button class="tablinks" id="defaultTab" onclick="openTab(event, 'News')">News</button> <br>
             <button class="tablinks" onclick="openTab(event, 'globalChat')">Global Chat</button>
         </div>
         <div class="mainChat">
             <div id="News" class="tabcontent">
-                <!-- <div class="newsTab" onclick="getNews()">
+                <!-- <div class="search-bar">
+                    <select name="topic" id="topic-drop">
+                        <option value="volvo">Volvo</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="volvo">Volvo</option>
+                    </select>
+                </div> -->
+                <div class="newsTab" onclick="getNews()">
                     <div>
                         <img src="https://www.nytimes.com/images/2022/05/10/business/09DC-UKRAINESTEEL1-print/merlin_206460306_e842afbf-263d-40d9-9811-0931a33b2421-articleLarge.jpg"></img>
                         <div>
                             <h3>U.S. to Lift Tariffs on Ukrainian Steel</h3>
                             <p>The Biden administration will lift a 25 percent tariff on the Ukrainian steel sector for one year to help the country’s economy.</p>
+                            <p><strong>By Hello World</strong></p>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div id="globalChat" class="tabcontent">
                 <h3>Global Chat</h3>
