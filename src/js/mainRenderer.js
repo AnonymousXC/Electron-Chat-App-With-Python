@@ -3,11 +3,14 @@ let sideBar = document.getElementsByClassName("side-bar")
 let mainChat = document.getElementsByClassName("mainChat")[0]
 let newsDiv = document.getElementById("News")
 let loadStatus = document.getElementById("loading-status")
+let connectionDiv = document.getElementsByClassName("offline-full")[0]
+let searchBar = document.getElementsByClassName("search-bar")[0]
 
 let sideBarStyle = window.getComputedStyle(sideBar[0])
 let bodyStyle = window.getComputedStyle(document.body)
 let canAddData = false
 let newsPage = 0
+let newsQuery = "Quote"
 
 
 function toggleSideBar() {
@@ -16,11 +19,13 @@ function toggleSideBar() {
         sideBar[0].style.left = "-350px"
         mainChat.style.left = "0px"
         mainChat.style.width = "100%"
+        searchBar.style.width = `calc(100% - 40px)`
     }
     else {
         sideBar[0].style.left = "0px"
         mainChat.style.left = "unset"
         mainChat.style.width = `calc(100% - ${sideBarStyle.width} - 4px)`
+        searchBar.style.width = `calc(100% - ${sideBarStyle.width} - 40px)`
     }
 }
 
@@ -28,16 +33,21 @@ window.onresize = () => {
     let width = sideBarStyle.width
     if(sideBarStyle.left == "0px") {
         mainChat.style.width = `calc(100vw - ${width} - 4px)`
+        searchBar.style.width = `calc(100% - ${width} - 40px)`
     }
-    else
+    else {
         mainChat.style.width = "100vw"
+        searchBar.style.width = `calc(100% - 40px)`
+    }
     dynamicMaxBtn()
 }
 
 function checkOnline() {
     let isOnline = navigator.onLine
     if(isOnline == true)
-        return
+        connectionDiv.style.display = "none"
+    else if(isOnline == false)
+        connectionDiv.style.display = "block"
 }
 
 setInterval(() => {
@@ -46,11 +56,11 @@ setInterval(() => {
 
 
 function getNews(page) {
-    loadStatus.style.top = "40px"
+    loadStatus.style.top = "45px"
     let path = "src/python/api/news.py"
     let options = {
         mode: 'json',
-        args: ["", page],
+        args: [newsQuery, page],
         pythonOptions: ['-u'],
     }
     window.appApi.pythonRun(path, options)
@@ -72,14 +82,17 @@ async function addNews(e) {
     let imgUrl = e.data[3]
     let author = e.data[4]
     for (let i = 0; i < abstract.length; i++) {
+        if(author[i] == null || author[i] == "")
+            author[i] = "By Anonymous"
         let code = `
         <div class="newsTab" data-url="${webUrl[i]}" onclick="openNewsInWindow(this)">
-        <div>
-            <img src="${imgUrl[i]}"></img>
             <div>
+                <img src="${imgUrl[i]}"></img>
+            </div>
+            <div class="newsCon">
                 <h3>${newsHeadlines[i]}</h3>
                 <p>${abstract[i]}</p>
-                <p><strong id="author">${author[i]}</strong></p>
+                <p class="author"><strong>${author[i]}</strong></p>
             </div>
         </div>
     </div>
@@ -102,4 +115,17 @@ newsDiv.onscroll = () => {
         getNews(newsPage)
         canAddData = false
     }
+}
+
+
+async function removeAllNews() {
+    while(newsDiv.childNodes.length > 2) {
+        await newsDiv.removeChild(newsDiv.lastChild)
+    }
+}
+
+function changeCategory(e,t) {
+    if(e.keyCode !== 13) return
+    newsQuery = t.value
+    removeAllNews().then(() => {getNews(newsPage)})
 }

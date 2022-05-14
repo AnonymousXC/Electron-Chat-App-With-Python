@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../resources/icons/emoji-sunglasses-fill.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main2.css">
     <link rel="stylesheet" href="../css/titlebar.css">
     <script src="../js/mainRenderer.js" defer></script>
     <script src="../js/titlebar/injectTitlebar.js" defer></script>
@@ -15,29 +16,9 @@
     <title>Chat App</title>
 </head>
 <body>
-    <!-- <div id="titleBar">
-        <div class="leftItems">
-            <button class="barBtn" onclick="toggleSideBar()">
-                <i class="bi bi-list"></i>
-            </button>
-            <img class="icon">
-            <p></p>
-        </div>
-        <div class="rightItems">
-            <button class="barBtn" onclick="minWindow()">
-                <img src="../resources/icons/min-white.svg">
-            </button>
-            <button class="barBtn" onclick="maxWindow()">
-                <img src="../resources/icons/max-white.svg" id="maxBtn">
-            </button>
-            <button class="barBtn" onclick="closeWindow()">
-                <img src="../resources/icons/x-lg.svg">
-            </button>
-        </div>
-    </div> -->
     <div class="app">
         <div id="loading-status">
-            <img src="../resources/gifs/cupertino_activity_indicator.gif" alt="" style="width: 20px;">
+            <img src="../resources/gifs/cupertino_activity_indicator.gif" alt="">
             <p>Loading</p>
         </div>
         <div class="side-bar">
@@ -46,29 +27,256 @@
         </div>
         <div class="mainChat">
             <div id="News" class="tabcontent">
-                <!-- <div class="search-bar">
-                    <select name="topic" id="topic-drop">
-                        <option value="volvo">Volvo</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="volvo">Volvo</option>
-                    </select>
-                </div> -->
-                <div class="newsTab" onclick="getNews()">
-                    <div>
-                        <img src="https://www.nytimes.com/images/2022/05/10/business/09DC-UKRAINESTEEL1-print/merlin_206460306_e842afbf-263d-40d9-9811-0931a33b2421-articleLarge.jpg"></img>
-                        <div>
-                            <h3>U.S. to Lift Tariffs on Ukrainian Steel</h3>
-                            <p>The Biden administration will lift a 25 percent tariff on the Ukrainian steel sector for one year to help the country’s economy.</p>
-                            <p><strong>By Hello World</strong></p>
-                        </div>
+                <div class="search-bar-wrapper">
+                    <div class="search-bar">
+                        <input type="text" id="search-topic" placeholder="Explore Topics..." list="news-topics" onkeydown="changeCategory(event, this)" value="Global">
+                        <datalist id="news-topics">
+                            <option value="Adventure Sports">
+                            <option value="Arts & Leisure">
+                            <option value="Arts">
+                            <option value="Automobiles">
+                            <option value="Blogs">
+                            <option value="Books">
+                            <option value="Booming">
+                            <option value="Business Day">
+                            <option value="Business">
+                            <option value="Cars">
+                            <option value="Circuits">
+                            <option value="Classifieds">
+                            <option value="Connecticut">
+                            <option value="Crosswords & Games">
+                            <option value="Culture">
+                            <option value="DealBook">
+                            <option value="Dining">
+                            <option value="Editorial">
+                            <option value="Education">
+                            <option value="Energy">
+                            <option value="Entrepreneurs">
+                            <option value="Environment">
+                            <option value="Escapes">
+                            <option value="Fashion & Style">
+                            <option value="Fashion">
+                            <option value="Favorites">
+                            <option value="Financial">
+                            <option value="Flight">
+                            <option value="Food">
+                            <option value="Foreign">
+                            <option value="Generations">
+                            <option value="Giving">
+                            <option value="Global Home">
+                            <option value="Health & Fitness">
+                            <option value="Health">
+                            <option value="Home & Garden">
+                            <option value="Home">
+                            <option value="Jobs">
+                            <option value="Key">
+                            <option value="Letters">
+                            <option value="Long Island">
+                            <option value="Magazine">
+                            <option value="Market Place">
+                            <option value="Media">
+                            <option value="Men's Health">
+                            <option value="Metro">
+                            <option value="Metropolitan">
+                            <option value="Movies">
+                            <option value="Museums">
+                            <option value="National">
+                            <option value="Nesting">
+                            <option value="Obits">
+                            <option value="Obituaries">
+                            <option value="Obituary">
+                            <option value="OpEd">
+                            <option value="Opinion">
+                            <option value="Outlook">
+                            <option value="Personal Investing">
+                            <option value="Personal Tech">
+                            <option value="Play">
+                            <option value="Politics">
+                            <option value="Regionals">
+                            <option value="Retail">
+                            <option value="Retirement">
+                            <option value="Science">
+                            <option value="Small Business">
+                            <option value="Society">
+                            <option value="Sports">
+                            <option value="Style">
+                            <option value="Sunday Business">
+                            <option value="Sunday Review">
+                            <option value="Sunday Styles">
+                            <option value="T Magazine">
+                            <option value="T Style">
+                            <option value="Technology">
+                            <option value="Teens">
+                            <option value="Television">
+                            <option value="The Arts">
+                            <option value="The Business of Green">
+                            <option value="The City Desk">
+                            <option value="The City">
+                            <option value="The Marathon">
+                            <option value="The Millennium">
+                            <option value="The Natural World">
+                            <option value="The Upshot">
+                            <option value="The Weekend">
+                            <option value="The Year in Pictures">
+                            <option value="Theater">
+                            <option value="Then & Now">
+                            <option value="Thursday Styles">
+                            <option value="Times Topics">
+                            <option value="Travel">
+                            <option value="U.S.">
+                            <option value="Universal">
+                            <option value="Upshot">
+                            <option value="UrbanEye">
+                            <option value="Vacation">
+                            <option value="Washington">
+                            <option value="Wealth">
+                            <option value="Weather">
+                            <option value="Week in Review">
+                            <option value="Week">
+                            <option value="Weekend">
+                            <option value="Westchester">
+                            <option value="Wireless Living">
+                            <option value="Women's Health">
+                            <option value="Working">
+                            <option value="Workplace">
+                            <option value="World">
+                            <option value="Your Money">
+                            <option value="Arts">
+                            <option value="Automobiles">
+                            <option value="Autos">
+                            <option value="Blogs">
+                            <option value="Books">
+                            <option value="Booming">
+                            <option value="Business">
+                            <option value="Business Day">
+                            <option value="Corrections">
+                            <option value="Crosswords & Games">
+                            <option value="Crosswords/Games">
+                            <option value="Dining & Wine">
+                            <option value="Dining and Wine">
+                            <option value="Editors' Notes">
+                            <option value="Education">
+                            <option value="Fashion & Style">
+                            <option value="Food">
+                            <option value="Front Page">
+                            <option value="Giving">
+                            <option value="Global Home">
+                            <option value="Great Homes & Destinations">
+                            <option value="Great Homes and Destinations">
+                            <option value="Health">
+                            <option value="Home & Garden">
+                            <option value="Home and Garden">
+                            <option value="International Home">
+                            <option value="Job Market">
+                            <option value="Learning">
+                            <option value="Magazine">
+                            <option value="Movies">
+                            <option value="Multimedia">
+                            <option value="Multimedia/Photos">
+                            <option value="N.Y. / Region">
+                            <option value="N.Y./Region">
+                            <option value="NYRegion">
+                            <option value="NYT Now">
+                            <option value="National">
+                            <option value="New York">
+                            <option value="New York and Region">
+                            <option value="Obituaries">
+                            <option value="Olympics">
+                            <option value="Open">
+                            <option value="Opinion">
+                            <option value="Paid Death Notices">
+                            <option value="Public Editor">
+                            <option value="Real Estate">
+                            <option value="Science">
+                            <option value="Sports">
+                            <option value="Style">
+                            <option value="Sunday Magazine">
+                            <option value="Sunday Review">
+                            <option value="T Magazine">
+                            <option value="T:Style">
+                            <option value="Technology">
+                            <option value="The Public Editor">
+                            <option value="The Upshot">
+                            <option value="Theater">
+                            <option value="Times Topics">
+                            <option value="TimesMachine">
+                            <option value="Today's Headlines">
+                            <option value="Topics">
+                            <option value="Travel">
+                            <option value="U.S.">
+                            <option value="Universal">
+                            <option value="UrbanEye">
+                            <option value="Washington">
+                            <option value="Week in Review">
+                            <option value="World">
+                            <option value="Your Money">
+                            <option value="Addendum">
+                            <option value="An Analysis">
+                            <option value="An Appraisal">
+                            <option value="Archives">
+                            <option value="Article">
+                            <option value="Banner">
+                            <option value="Biography">
+                            <option value="Birth Notice">
+                            <option value="Blog">
+                            <option value="Brief">
+                            <option value="Caption">
+                            <option value="Chronology">
+                            <option value="Column">
+                            <option value="Correction">
+                            <option value="Economic Analysis">
+                            <option value="Editorial">
+                            <option value="Editorial Cartoon">
+                            <option value="Editors' Note">
+                            <option value="First Chapter">
+                            <option value="Front Page">
+                            <option value="Glossary">
+                            <option value="Interactive Feature">
+                            <option value="Interactive Graphic">
+                            <option value="Interview">
+                            <option value="Letter">
+                            <option value="List">
+                            <option value="Marriage Announcement">
+                            <option value="Military Analysis">
+                            <option value="News">
+                            <option value="News Analysis">
+                            <option value="Newsletter">
+                            <option value="Obituary">
+                            <option value="Obituary (Obit)">
+                            <option value="Op-Ed">
+                            <option value="Paid Death Notice">
+                            <option value="Postscript">
+                            <option value="Premium">
+                            <option value="Question">
+                            <option value="Quote">
+                            <option value="Recipe">
+                            <option value="Review">
+                            <option value="Schedule">
+                            <option value="SectionFront">
+                            <option value="Series">
+                            <option value="Slideshow">
+                            <option value="Special Report">
+                            <option value="Statistics">
+                            <option value="Summary">
+                            <option value="Text">
+                            <option value="Video">
+                            <option value="Web Log">
+                        </datalist>
                     </div>
                 </div>
             </div>
-            <div id="globalChat" class="tabcontent">
-                <h3>Global Chat</h3>
-                <p>This is global chat.</p>
-            </div>
+        <div id="globalChat" class="tabcontent">
+            <h3>Global Chat</h3>
+            <p>This is global chat.</p>
         </div>
     </div>
+    <div class="offline-full">
+        <div class="offline-error">
+            <h2>Connection Error</h2>
+            <p>Connection Error Occurred. <br> Please retry after connecting to internet.</p>
+            <button onclick="checkOnline()">Retry</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
