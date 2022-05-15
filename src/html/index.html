@@ -22,8 +22,8 @@
             <p>Loading</p>
         </div>
         <div class="side-bar">
-            <button class="tablinks" id="defaultTab" onclick="openTab(event, 'News')">News</button> <br>
-            <button class="tablinks" onclick="openTab(event, 'globalChat')">Global Chat</button>
+            <button class="tablinks" id="newsTabButton" onclick="openTab(event, 'News')">News</button> <br>
+            <button class="tablinks" id="globalChatButton" onclick="openTab(event, 'globalChat')">Global Chat</button>
         </div>
         <div class="mainChat">
             <div id="News" class="tabcontent">
@@ -265,11 +265,27 @@
                     </div>
                 </div>
             </div>
-        <div id="globalChat" class="tabcontent">
-            <h3>Global Chat</h3>
-            <p>This is global chat.</p>
+            <div id="globalChat" class="tabcontent">
+                <div class="top-chat-bar">
+                </div>
+                <div class="global-chat-msg">
+                </div>
+                <div class="msg-box">
+                    <div class="btns" style="justify-self: flex-start !important;display: inline-flex;">
+                        <button class="msg-btns">
+                            <i class="bi bi-emoji-laughing msg-icons"></i>
+                        </button>
+                        <button class="msg-btns">
+                            <i class="bi bi-pin-fill msg-icons"></i>
+                        </button>
+                    </div>
+                    <textarea type="text" id="msg" placeholder="Type your message..."></textarea>
+                    <button class="msg-btns" style="margin-right: 10px;">
+                        <i class="bi bi-send msg-icons"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
     <div class="offline-full">
         <div class="offline-error">
             <h2>Connection Error</h2>

@@ -10,7 +10,7 @@ let sideBarStyle = window.getComputedStyle(sideBar[0])
 let bodyStyle = window.getComputedStyle(document.body)
 let canAddData = false
 let newsPage = 0
-let newsQuery = "Quote"
+let newsQuery = ""
 
 
 function toggleSideBar() {
@@ -55,12 +55,14 @@ setInterval(() => {
 }, 2000)
 
 
-function getNews(page) {
-    loadStatus.style.top = "45px"
+function getNews() {
+    let activeTab = document.getElementsByClassName("active")[0]
+    if(activeTab.id != "newsTabButton") return
+    loadStatus.style.top = "48px"
     let path = "src/python/api/news.py"
     let options = {
         mode: 'json',
-        args: [newsQuery, page],
+        args: [newsQuery, newsPage],
         pythonOptions: ['-u'],
     }
     window.appApi.pythonRun(path, options)
@@ -87,7 +89,7 @@ async function addNews(e) {
         let code = `
         <div class="newsTab" data-url="${webUrl[i]}" onclick="openNewsInWindow(this)">
             <div>
-                <img src="${imgUrl[i]}"></img>
+                <img src="${imgUrl[i]}" loading="lazy"></img>
             </div>
             <div class="newsCon">
                 <h3>${newsHeadlines[i]}</h3>
@@ -112,7 +114,7 @@ window.onmessage = async (e) => {
 newsDiv.onscroll = () => {
     let isBottom = newsDiv.scrollTop === (newsDiv.scrollHeight -newsDiv.offsetHeight) ? true: false
     if(isBottom === true && canAddData === true) {
-        getNews(newsPage)
+        getNews()
         canAddData = false
     }
 }
@@ -127,5 +129,5 @@ async function removeAllNews() {
 function changeCategory(e,t) {
     if(e.keyCode !== 13) return
     newsQuery = t.value
-    removeAllNews().then(() => {getNews(newsPage)})
+    removeAllNews().then(() => {getNews()})
 }

@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+:root {
+    --input-msg-background: #2a3942;
+    --text-msg-color: #d1d7db;
+    --msg-border: #2a3942;
+    --msgbox-backpanel-background: #202c33;
+    --msg-icons-color: #8696a0;
+    --topbar-color: #202c33;
+    --chat-background: #0b141a;
+}
+
+
 /* Offline Error Styles */
 
 .offline-full {
@@ -51,10 +65,10 @@
 
 .search-bar-wrapper {
     width: 100%; 
-    height: 60px; 
+    height: 55px; 
     position: fixed;
     background-color: var(--titlebar-bg);
-    z-index: 10;
+    z-index: 5;
 }
 
 .search-bar {
@@ -84,4 +98,68 @@
 #news-topics > option:hover {
     background-color: var(--complementary-color);
     color: #f8f8f2;
+}
+
+/* Message Box */
+
+.top-chat-bar {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: var(--topbar-color);
+}
+
+.global-chat-msg {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 112px);
+    background-color: var(--chat-background);
+}
+
+.msg-box {
+    position: relative;
+    width: 100%;
+    height: 62px;
+    max-height: 100px;
+    background-color: var(--msgbox-backpanel-background);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#msg {
+    position: relative;
+    width: 85%;
+    height: 25px;
+    max-height: 100px;
+    font-size: 15px;
+    font-weight: 400;
+    word-wrap: break-word;
+    resize: none !important;
+    outline: none !important;
+    line-height: 20px;
+    white-space: pre-wrap;
+    user-select: text;
+    max-height: 100px;
+    padding: 9px 12px 11px;
+    margin: 5px 10px;
+    scrollbar-width: thin;
+    border-radius: 8px;
+    border: 1px solid var(--msg-border);
+    background-color: var(--input-msg-background);
+    color: var(--text-msg-color);
+    font-family: 'Open Sans', sans-serif;
+    /* "Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif" */
+}
+
+.msg-btns {
+    background-color: transparent;
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.msg-icons {
+    color: var(--msg-icons-color);
+    font-size: 24px;
 }

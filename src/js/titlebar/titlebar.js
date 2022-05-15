@@ -40,6 +40,6 @@ window.onload = (e) => {
     }
     document.getElementsByClassName("icon")[0].setAttribute("src", iconPath)
     if(filename == "index.html")
-        getNews(0)
+        getNews()
 
 }

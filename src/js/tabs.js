@@ -10,7 +10,13 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+
+    if(tabName == "News") {
+      let newsChild = document.getElementById("News").childNodes
+      if(newsChild.length <= 3)
+        getNews()
+    }
 }
 
 
-document.getElementById("defaultTab").click()
+document.getElementById("globalChatButton").click()
