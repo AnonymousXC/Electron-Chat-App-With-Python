@@ -121,7 +121,7 @@ newsDiv.onscroll = () => {
 
 
 async function removeAllNews() {
-    while(newsDiv.childNodes.length > 2) {
+    while(newsDiv.children.length > 2) {
         await newsDiv.removeChild(newsDiv.lastChild)
     }
 }

@@ -12,8 +12,8 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 
     if(tabName == "News") {
-      let newsChild = document.getElementById("News").childNodes
-      if(newsChild.length <= 3)
+      let newsChild = document.getElementById("News").children
+      if(newsChild.length <= 2)
         getNews()
     }
 }

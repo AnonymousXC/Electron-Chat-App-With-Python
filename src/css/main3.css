@@ -1,0 +1,19 @@
+.self-data {
+    display: flex;
+    height: 100%;
+    margin-left: 10px;
+    align-items: center;
+}
+
+
+.avatar {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+
+.self-data > p {
+    padding-left: 10px;
+    color: var(--primary-strong-color);
+    user-select: none;
+}

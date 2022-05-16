@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 
 :root {
@@ -9,6 +8,7 @@
     --msg-icons-color: #8696a0;
     --topbar-color: #202c33;
     --chat-background: #0b141a;
+    --primary-strong-color: #e9edef;
 }
 
 
@@ -105,14 +105,14 @@
 .top-chat-bar {
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 59px;
     background-color: var(--topbar-color);
 }
 
 .global-chat-msg {
     position: relative;
     width: 100%;
-    height: calc(100% - 112px);
+    height: calc(100% - 121px);
     background-color: var(--chat-background);
 }
 
@@ -148,7 +148,7 @@
     border: 1px solid var(--msg-border);
     background-color: var(--input-msg-background);
     color: var(--text-msg-color);
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
     /* "Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif" */
 }
 
