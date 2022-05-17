@@ -2,6 +2,7 @@
 # Ignored Directory
 
 node_modules/
+module/
 # Ignored Files
 
 package-lock.json

@@ -16,7 +16,7 @@ let appApi = {
     },
     openNewsInWin: (url) => {
         ipcRenderer.send("openNewsInWindow", url)
-    }
+    },
 }
 
 

@@ -157,9 +157,17 @@
     border: none;
     height: 40px;
     width: 40px;
+    z-index: 5 !important;
+}
+
+.msg-btns:hover{
+    cursor: pointer;
 }
 
 .msg-icons {
+    position: relative;
     color: var(--msg-icons-color);
     font-size: 24px;
+    z-index: -1 !important;
 }
+
