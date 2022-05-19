@@ -7,4 +7,5 @@ module/
 
 package-lock.json
 src/python/api/api_keys.json
-src/python/firebase/main.html
+src/python/firebase/creds.json
+src/python/firebase/link.py
