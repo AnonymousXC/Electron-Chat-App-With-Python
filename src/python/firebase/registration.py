@@ -15,7 +15,10 @@ firebase_admin.initialize_app(cred,{
 def register(display_name, password, email):
 
     try:
-        auth.create_user(display_name =display_name, password=password, email=email)
+        auth.create_user(uid=display_name, password=password, email=email)
+
+    except auth.UidAlreadyExistsError:
+        return "Username already taken try another"
 
     except ValueError:
         if len(password) < 6:

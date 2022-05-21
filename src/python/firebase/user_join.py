@@ -14,12 +14,12 @@ firebase_admin.initialize_app(cred,{
 ref = db.reference("Users")
 
 
-def user_join(email, timestamp, msg=False):
+def user_join(username, timestamp, msg=False):
 
     if not msg:
         ref.update(
             {
-                email:
+                username:
                 {
                     "timestamp" : timestamp,
                     "messages" : 0
@@ -29,11 +29,11 @@ def user_join(email, timestamp, msg=False):
         )
     
     else:
-        update_msg_count(email)
+        update_msg_count(username)
 
 
-def update_msg_count(email):
-    new_ref = db.reference(f"Users/{email}")
+def update_msg_count(username):
+    new_ref = db.reference(f"Users/{username}")
     msgs = new_ref.get()["messages"]
 
     ref.update(
@@ -48,7 +48,7 @@ def number_of_user():
 
 
 if __name__ == "__main__":
-    email = sys.argv[1]
+    username = sys.argv[1]
     timestamp = sys.argv[2]
     msg_bool = sys.argv[3]
 
@@ -57,6 +57,6 @@ if __name__ == "__main__":
     else:
         msg_bool = True
 
-    if email != ""  and timestamp != "":
-        user_join(email, timestamp, msg_bool)
+    if username != ""  and timestamp != "":
+        user_join(username, timestamp, msg_bool)
         print(number_of_user())
