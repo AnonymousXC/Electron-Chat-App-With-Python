@@ -14,8 +14,8 @@ firebase_admin.initialize_app(cred,{
 ref = db.reference("Users")
 
 
-def user_leave(username):
-    new_ref = db.reference(f"Users/{username}")
+def user_leave(email):
+    new_ref = db.reference(f"Users/{email}")
     new_ref.delete()
 
 
@@ -31,8 +31,8 @@ def number_of_user():
 
 
 if __name__ == "__main__":
-    username = sys.argv[1]
+    email = sys.argv[1]
     
-    if username != "" :
-        user_leave(username)
+    if email != "" :
+        user_leave(email)
         print(number_of_user())
