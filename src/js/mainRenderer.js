@@ -105,10 +105,24 @@ async function addNews(e) {
 
 
 window.onmessage = async (e) => {
+
     if(e.source !== window) return
-    addNews(e).then(() => {loadStatus.style.top = "-250px";})
-    canAddData = true
-    newsPage += 10
+
+    let dataLen = e.data.length - 1;
+
+    // News
+    if(e.data[dataLen] == "Got News") {
+        console.log("Loading");
+        addNews(e).then(() => {loadStatus.style.top = "-250px";})
+        canAddData = true
+        newsPage += 10
+    }
+    
+    // Register User
+    if(true) {
+        alert(e.data)
+    }
+
 }
 
 newsDiv.onscroll = () => {
@@ -130,4 +144,18 @@ function changeCategory(e,t) {
     if(e.keyCode !== 13) return
     newsQuery = t.value
     removeAllNews().then(() => {getNews()})
+}
+
+function openRegisterDia() {
+    console.log("Opening");
+}
+
+
+function registerUser() {
+    let path = "src/python/firebase/registration.py"
+    let options = {
+        mode: 'text',
+        args: ["Hello Name", "1234test", "layiy24162@dakcans.com"],
+    }
+    window.appApi.pythonRun(path , options)
 }

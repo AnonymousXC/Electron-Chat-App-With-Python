@@ -62,3 +62,4 @@ if __name__ == "__main__":
 
     for contents in load_article(api_key, search=search, page=page):
         print(json.dumps(contents))
+    print(json.dumps("Got News"))

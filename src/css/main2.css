@@ -132,12 +132,12 @@
     width: 85%;
     height: 25px;
     max-height: 100px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     word-wrap: break-word;
     resize: none !important;
     outline: none !important;
-    line-height: 20px;
+    line-height: 25px;
     white-space: pre-wrap;
     user-select: text;
     max-height: 100px;
