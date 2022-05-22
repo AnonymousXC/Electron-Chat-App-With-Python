@@ -7,6 +7,6 @@ let picker = new EmojiPicker({
     ],
     closeButton: false,
     dragButton: false,
-    addX: -160,
-    addY: -410
+    addPosX: -150,
+    addPosY: -380
 });
