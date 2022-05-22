@@ -5,6 +5,7 @@ from link import link
 import sys
 
 
+
 cred = credentials.Certificate("src\\python\\firebase\\creds.json")
 
 firebase_admin.initialize_app(cred,{
@@ -14,15 +15,22 @@ firebase_admin.initialize_app(cred,{
 ref = db.reference("Users")
 
 
-def user_leave(username):
+def update_msg_count(username):
     new_ref = db.reference(f"Users/{username}")
-    new_ref.delete()
+    msgs = new_ref.get()["messages"]
+
+    ref.update(
+        {
+           "messages" : msgs+1
+        }
+    )
+
 
 
 if __name__ == "__main__":
     username = sys.argv[1]
-    
-    if username != "" :
-        user_leave(username)
-        print("Purpose - Removes user from database once username is recieved")
-        print("user_leave.py")
+
+    if username != "":
+        update_msg_count(username)
+        print("Purpose - Add message count of the user who most recently messaged on global chats.")
+        print("update_msg_count.py")
