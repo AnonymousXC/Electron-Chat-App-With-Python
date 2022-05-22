@@ -117,11 +117,6 @@ window.onmessage = async (e) => {
         canAddData = true
         newsPage += 10
     }
-    
-    // Register User
-    if(true) {
-        alert(e.data)
-    }
 
 }
 
@@ -146,16 +141,9 @@ function changeCategory(e,t) {
     removeAllNews().then(() => {getNews()})
 }
 
+
 function openRegisterDia() {
-    console.log("Opening");
+    window.appApi.openRegisterWindow();
 }
 
 
-function registerUser() {
-    let path = "src/python/firebase/registration.py"
-    let options = {
-        mode: 'text',
-        args: ["Hello Name", "1234test", "layiy24162@dakcans.com"],
-    }
-    window.appApi.pythonRun(path , options)
-}

@@ -1,0 +1,16 @@
+:root {
+    --bg-main: #181818;
+    --titlebar-bg: #1b1d23;
+    --border-color: #343b4b;
+    --sidebar-bg: #272c36;
+    --text-color: #949aa7;
+    --complementary-color: #4f9fee;
+    --input-msg-background: #2a3942;
+    --text-msg-color: #d1d7db;
+    --msg-border: #2a3942;
+    --msgbox-backpanel-background: #202c33;
+    --msg-icons-color: #8696a0;
+    --topbar-color: #202c33;
+    --chat-background: #0b141a;
+    --primary-strong-color: #e9edef;
+}

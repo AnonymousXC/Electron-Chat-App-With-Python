@@ -42,3 +42,4 @@ if __name__ == "__main__":
 
     if password != "" and email != "" and username != "":
         print(register(username, password, email))
+        print("registration.py")

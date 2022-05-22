@@ -57,8 +57,29 @@ function newNewsWindow(url) {
 }
 
 
+function registerUserWindow() {
+    const registerWindow = new BrowserWindow({
+        height: 380,
+        width: 500,
+        frame: false,
+        parent: win,
+        modal: true,
+        webPreferences: {
+            nodeIntegration: true,
+            preload: path.join(__dirname, "preload/mainPreload.js")
+        },
+        // icon: path.join(__dirname, 'assets', 'img', 'icon.png'),
+        title: 'My App',
+    });
+    registerWindow.webContents.openDevTools();
+    registerWindow.removeMenu();
+    registerWindow.setTitle('My App');
+    registerWindow.loadFile(path.join(__dirname, 'html/registerUser.html'));
+}
+
+
 ipcMain.on("closeWindow", (e) => {
-    app.quit()
+    BrowserWindow.getFocusedWindow().close()
 });
 
 ipcMain.on("minimizeWindow", (e) => {
@@ -79,5 +100,8 @@ ipcMain.once("offline", () => {
 
 ipcMain.on("openNewsInWindow", (e, url) => {
     newNewsWindow(url)
-    
+});
+
+ipcMain.on("open-register-win", () => {
+    registerUserWindow()
 })

@@ -17,6 +17,9 @@ let appApi = {
     openNewsInWin: (url) => {
         ipcRenderer.send("openNewsInWindow", url)
     },
+    openRegisterWindow: () => {
+        ipcRenderer.send("open-register-win", null)
+    }
 }
 
 
