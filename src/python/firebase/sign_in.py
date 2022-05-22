@@ -38,5 +38,5 @@ if __name__ == "__main__":
 
     if email != "" and username != "":
         print(signIn(email, username))
-        print("Purpose - Checks you user enter information on the sign in page to allow access to app")
+        print("Purpose - Checks user entered information on the sign in page to allow access to application")
         print("sign_in.py")
