@@ -12,10 +12,10 @@ firebase_admin.initialize_app(cred,{
 })
 
 
-def register(display_name, password, email):
+def register(display_name, password, email, pfp_url):
 
     try:
-        auth.create_user(uid=display_name, password=password, email=email)
+        auth.create_user(uid=display_name, password=password, email=email, photo_url = pfp_url)
 
     except auth.UidAlreadyExistsError:
         return "Username already taken try another"
@@ -39,6 +39,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     email = sys.argv[3]
+    pfp_url = sys.argv[4]
 
     if password != "" and email != "" and username != "":
         print(register(username, password, email))
