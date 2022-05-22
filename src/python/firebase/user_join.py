@@ -37,5 +37,5 @@ if __name__ == "__main__":
 
     if username != ""  and timestamp != "":
         user_join(username, timestamp)
-        print("Purpose - Add users username(uid) and time of entry to webiste to db")
+        print("Purpose - Add users username(uid) and time of entry on webiste to db")
         print("user_join.py")
