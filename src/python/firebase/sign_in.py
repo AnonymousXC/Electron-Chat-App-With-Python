@@ -40,5 +40,3 @@ if __name__ == "__main__":
         print(signIn(email, username))
         print("Purpose - Checks you user enter information on the sign in page to allow access to app")
         print("sign_in.py")
-
-print(signIn("test@gmail.com"))
