@@ -5,9 +5,9 @@ body {
 }
 
 
-.barBtn:not(:last-child) {
+/* .barBtn:not(:last-child) {
     display: none;
-}
+} */
 
 .full-win {
     position: relative;
@@ -63,4 +63,9 @@ input {
 .regBtn:hover {
     background-color: var(--complementary-color);
     color: var(--primary-strong-color);
+}
+
+#loading-gif {
+    margin-left: 10px;
+    transform: translateY(25%);
 }
