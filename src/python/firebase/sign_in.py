@@ -20,23 +20,23 @@ def signIn(username_from_user, email_from_user):
         pfp_url = user.photo_url
     
     except auth.UserNotFoundError:
-        return "No user record found for the provided email."
+        return  json.dumps("No user record found for the provided email.")
     
     except ValueError:
-        return "Email is malformed"
+        return  json.dumps("Email is malformed")
     
     else:
         if username == username_from_user:
             return json.dumps({"username": username, "pfp_url": pfp_url})
         else:
-            return "Invaild Information"
+            return  json.dumps("Invaild Information")
 
 
 if __name__ == "__main__":
-    email = sys.argv[1]
-    username = sys.argv[2]
+    username = sys.argv[1]
+    email = sys.argv[2]
 
-    if email != "" and username != "":
-        print(signIn(email, username))
+    if username != "" and email != "":
+        print(signIn(username, email))
         print("Purpose - Checks user entered information on the sign in page to allow access to application")
         print("sign_in.py")
