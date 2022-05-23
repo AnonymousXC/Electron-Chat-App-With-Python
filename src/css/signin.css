@@ -45,7 +45,7 @@ input {
     width: max-content;
 }
 
-.regBtn {
+.signBtn {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -60,7 +60,7 @@ input {
     cursor: pointer;
 }
 
-.regBtn:hover {
+.signBtn:hover {
     background-color: var(--complementary-color);
     color: var(--primary-strong-color);
 }

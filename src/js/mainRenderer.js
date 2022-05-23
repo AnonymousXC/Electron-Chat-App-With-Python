@@ -109,13 +109,17 @@ window.onmessage = async (e) => {
     if(e.source !== window) return
 
     let dataLen = e.data.length - 1;
-
+    console.log(e.data);
     // News
     if(e.data[dataLen] == "Got News") {
-        console.log("Loading");
         addNews(e).then(() => {loadStatus.style.top = "-250px";})
         canAddData = true
         newsPage += 10
+    }
+
+    if(e.data[dataLen] == "num_of_users.py") {
+        console.log(e.data);
+        document.getElementById("online-user").innerText = "Online : " + e.data[0]
     }
 
 }
@@ -147,3 +151,21 @@ function openRegisterDia() {
 }
 
 
+function openSignIn() {
+    window.appApi.openSignInWindow()
+}
+
+
+function getNumberOfUsers() {
+    let path = "src/python/firebase/num_of_users.py"
+    let options = {
+        mode: 'text',
+        pythonOptions: ['-u'],
+    }
+    window.appApi.pythonRun(path, options)
+}
+
+
+setInterval(() => {
+    getNumberOfUsers();
+}, 3000)

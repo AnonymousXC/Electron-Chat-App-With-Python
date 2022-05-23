@@ -17,7 +17,7 @@ function registerUser() {
     let path = "src/python/firebase/registration.py"
     let options = {
         mode: 'text',
-        args: [username, password, email],
+        args: [username, password, email, "NaN"],
     }
     window.appApi.pythonRun(path , options)
 }

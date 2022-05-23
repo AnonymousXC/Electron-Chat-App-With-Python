@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const path = require("path")
+const path = require("path");
 
 
 let win;
@@ -77,6 +77,27 @@ function registerUserWindow() {
     registerWindow.loadFile(path.join(__dirname, 'html/registerUser.html'));
 }
 
+function signInWindow() {
+    const signIn = new BrowserWindow({
+        height: 380,
+        width: 500,
+        frame: false,
+        parent: win,
+        modal: true,
+        webPreferences: {
+            nodeIntegration: true,
+            preload: path.join(__dirname, "preload/mainPreload.js")
+        },
+        // icon: path.join(__dirname, 'assets', 'img', 'icon.png'),
+        title: 'My App',
+    });
+    signIn.webContents.openDevTools();
+    signIn.removeMenu();
+    signIn.setTitle('My App');
+    signIn.loadFile(path.join(__dirname, 'html/signin.html'));
+}
+
+
 
 ipcMain.on("closeWindow", (e) => {
     BrowserWindow.getFocusedWindow().close()
@@ -104,4 +125,12 @@ ipcMain.on("openNewsInWindow", (e, url) => {
 
 ipcMain.on("open-register-win", () => {
     registerUserWindow()
-})
+});
+
+ipcMain.on("open-sign-in-win", () => {
+    signInWindow()
+});
+
+ipcMain.on("got-username", (e, data) => {
+    win.webContents.send("setUsername", data)
+});

@@ -19,8 +19,31 @@ let appApi = {
     },
     openRegisterWindow: () => {
         ipcRenderer.send("open-register-win", null)
-    }
+    },
+    openSignInWindow: () => {
+        ipcRenderer.send("open-sign-in-win", null)
+    },
+    setUsername: (name) => {
+        ipcRenderer.send("got-username", name)
+    },
 }
+
+
+ipcRenderer.on("setUsername", (e, data) => {
+
+    document.getElementById("name-user").innerText = data
+    let date = new Date()
+    let time = date.getHours() + " : " + date.getMinutes();
+    let path = "src/python/firebase/user_join.py"
+    let options = {
+        mode: 'text',
+        args: [data, time],
+        pythonOptions: ['-u'],
+    }
+    appApi.pythonRun(path, options)
+
+});
+
 
 
 appApi.isOnline()
