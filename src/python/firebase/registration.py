@@ -42,5 +42,5 @@ if __name__ == "__main__":
     pfp_url = sys.argv[4]
 
     if password != "" and email != "" and username != "":
-        print(register(username, password, email))
+        print(register(username, password, email, pfp_url))
         print("registration.py")
