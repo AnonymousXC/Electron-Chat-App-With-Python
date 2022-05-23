@@ -31,13 +31,14 @@ let appApi = {
 
 ipcRenderer.on("setUsername", (e, data) => {
 
-    document.getElementById("name-user").innerText = data
+    document.getElementById("name-user").innerText = data.username
+    document.querySelector(".avatar").src = data.pfp_url
     let date = new Date()
     let time = date.getHours() + " : " + date.getMinutes();
     let path = "src/python/firebase/user_join.py"
     let options = {
         mode: 'text',
-        args: [data, time],
+        args: [data.username, time],
         pythonOptions: ['-u'],
     }
     appApi.pythonRun(path, options)

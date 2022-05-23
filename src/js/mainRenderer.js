@@ -118,7 +118,6 @@ window.onmessage = async (e) => {
     }
 
     if(e.data[dataLen] == "num_of_users.py") {
-        console.log(e.data);
         document.getElementById("online-user").innerText = "Online : " + e.data[0]
     }
 
