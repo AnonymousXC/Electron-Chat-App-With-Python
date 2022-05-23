@@ -5,6 +5,7 @@ function registerUser() {
     let username = document.getElementById("username").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
+    let picUrl = document.getElementById("profile-pic").value
 
     if(username == "" || email == "" || password == "" || !username || !email || !password)
     {
@@ -17,7 +18,7 @@ function registerUser() {
     let path = "src/python/firebase/registration.py"
     let options = {
         mode: 'text',
-        args: [username, password, email, "NaN"],
+        args: [username, password, email, picUrl],
     }
     window.appApi.pythonRun(path , options)
 }

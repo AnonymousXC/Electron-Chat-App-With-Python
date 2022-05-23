@@ -21,14 +21,14 @@ window.onmessage = async (e) => {
     if(e.source !== window) return
 
     let dataLen = e.data.length - 1;
-
+    console.log(e.data);
     if(e.data[dataLen] == "sign_in.py") {
         if(typeof(e.data[0]) == "object")
             document.getElementById("status").innerHTML = "Logged In."
         else
             document.getElementById("status").innerHTML = e.data[0]
         if(!e.data[0].username || e.data[0].username == undefined) return;
-        window.appApi.setUsername(e.data[0].username);
+        window.appApi.setUsername(e.data[0]);
         setTimeout(() => {
             window.appApi.closeWin();
         }, 500)
