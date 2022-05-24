@@ -10,10 +10,45 @@
     height: 48px;
     width: 48px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .self-data > p {
     padding-left: 10px;
     color: var(--primary-strong-color);
     user-select: none;
+}
+
+
+/* Full View Of Profile Pic */
+
+.avatar-full {
+    position: fixed;
+    border-radius: 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    aspect-ratio: auto;
+    width: auto;
+    height: 70%;
+}
+
+.avatar-full-close {
+    background-color: transparent;
+    border: none;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    left: 80%;
+    top: 2%;
+    cursor: pointer;
+}
+
+.avatar-full-wrapper {
+    position: absolute;
+    height: calc(100% - 40px);
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
 }

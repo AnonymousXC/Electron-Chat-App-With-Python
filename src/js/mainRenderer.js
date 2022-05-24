@@ -46,8 +46,9 @@ function checkOnline() {
     let isOnline = navigator.onLine
     if(isOnline == true)
         connectionDiv.style.display = "none"
-    else if(isOnline == false)
+    else if(isOnline == false) {
         connectionDiv.style.display = "block"
+    }
 }
 
 setInterval(() => {
@@ -109,7 +110,7 @@ window.onmessage = async (e) => {
     if(e.source !== window) return
 
     let dataLen = e.data.length - 1;
-
+ 
     // News
     if(e.data[dataLen] == "Got News") {
         addNews(e).then(() => {loadStatus.style.top = "-250px";})
@@ -166,7 +167,7 @@ function getNumberOfUsers() {
 
 
 setInterval(() => {
-    if(document.querySelector(".active").id == "globalChatButton")
+    if(document.querySelector(".active").id == "globalChatButton" && navigator.onLine === true)
         getNumberOfUsers()
 }, 2000)
 
@@ -178,4 +179,18 @@ function fileSelectDia() {
 
 window.appApi.showOpenDialogOn("file-selected", (path) => {
     console.log(path);
-})
+});
+
+function imagePopup() {
+    let html = `
+    <div class="avatar-full-wrapper">
+        <img src="../resources/images/avatar.webp" alt="" class="avatar-full">
+        <button class="avatar-full-close" onclick="closeImagePopup()"> &#10006 </button>
+    </div>`
+    document.body.insertAdjacentHTML("beforeend", html)
+    document.querySelector(".avatar-full").src = document.querySelector(".avatar").src
+}
+
+function closeImagePopup() {
+    document.querySelector(".avatar-full-wrapper").remove()
+}
