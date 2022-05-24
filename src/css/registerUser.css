@@ -69,3 +69,13 @@ input {
     margin-left: 10px;
     transform: translateY(25%);
 }
+
+.select-pic {
+    background-color: transparent;
+    border: none;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+    cursor: pointer;
+}

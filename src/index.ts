@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require("path");
 
 
@@ -134,3 +134,11 @@ ipcMain.on("open-sign-in-win", () => {
 ipcMain.on("got-username", (e, data) => {
     win.webContents.send("setUsername", data)
 });
+
+
+ipcMain.on('open-dialog', (event, properties) => {
+    dialog.showOpenDialog(win, properties).then((data) => {
+        if(data)
+            event.reply("file-selected", data.filePaths[0])
+    })
+})

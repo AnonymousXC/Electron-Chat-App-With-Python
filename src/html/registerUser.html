@@ -17,19 +17,22 @@
         <div class="center-wrap">
             <div class="flex-wrap">
                 <p class="indicator"><Strong>Name : </Strong></p>
-                <input type="text" id="username">
+                <input type="text" id="username" placeholder="Username">
             </div> <br>
             <div class="flex-wrap">
                 <p class="indicator"><strong>Email : </strong></p>
-                <input type="text" id="email">
+                <input type="text" id="email" placeholder="Email address">
             </div> <br>
             <div class="flex-wrap">
                 <p class="indicator"><strong>Password : </strong></p>
-                <input type="password" id="password">
+                <input type="password" id="password" placeholder="Password">
             </div> <br>
             <div class="flex-wrap">
-                <p class="indicator"><strong>Profile Pic URL : </strong></p>
-                <input type="url" id="profile-pic">
+                <p class="indicator"><strong>Profile Pic : </strong></p>
+                <input type="url" id="profile-pic" placeholder="Pic URL or file path">
+                <button class="select-pic" onclick="selectFile()">
+                    <img src="../resources/icons/img-icon.svg" alt="" height="36" width="auto">
+                </button>
             </div>
             <div class="indi-div">
                 <p class="indicator" id="status" style="padding:5px;text-align: center;">

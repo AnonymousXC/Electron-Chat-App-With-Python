@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer} = require("electron")
+const { contextBridge, ipcRenderer } = require("electron")
 const {PythonShell} = require("python-shell")
 
 
@@ -26,6 +26,12 @@ let appApi = {
     setUsername: (name) => {
         ipcRenderer.send("got-username", name)
     },
+    showOpenDialog: (props) => {
+        ipcRenderer.send("open-dialog", props);
+    },
+    showOpenDialogOn: (channel, callback) => {
+        ipcRenderer.on(channel, (_,data) => callback(data))
+    }
 }
 
 

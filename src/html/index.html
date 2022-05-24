@@ -28,10 +28,12 @@
             <p>Loading</p>
         </div>
         <div class="side-bar">
-            <button class="tablinks" id="newsTabButton" onclick="openTabLocal(event, 'News')">News</button> <br>
-            <button class="tablinks" id="globalChatButton" onclick="openTabLocal(event, 'globalChat')">Global Chat</button>
-            <button onclick="openRegisterDia()" class="tablinks">Register User</button>
-            <button class="tablinks" onclick="openSignIn()">Sign In</button>
+            <div>
+                <button class="tablinks" id="newsTabButton" onclick="openTabLocal(event, 'News')">News</button> <br>
+                <button class="tablinks" id="globalChatButton" onclick="openTabLocal(event, 'globalChat')">Global Chat</button>
+                <button onclick="openRegisterDia()" class="tablinks">Register User</button>
+                <button class="tablinks" onclick="openSignIn()">Sign In</button>
+            </div>
         </div>
         <div class="mainChat">
             <div id="News" class="tabcontent">
@@ -289,7 +291,7 @@
                         <button class="msg-btns" id="emoji-btn">
                             <i class="bi bi-emoji-laughing msg-icons"></i>
                         </button>
-                        <button class="msg-btns">
+                        <button class="msg-btns" id="file-upload" onclick="fileSelectDia()">
                             <i class="bi bi-pin-fill msg-icons"></i>
                         </button>
                     </div>

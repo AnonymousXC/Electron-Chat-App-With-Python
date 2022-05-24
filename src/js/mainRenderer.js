@@ -109,7 +109,7 @@ window.onmessage = async (e) => {
     if(e.source !== window) return
 
     let dataLen = e.data.length - 1;
-    console.log(e.data);
+
     // News
     if(e.data[dataLen] == "Got News") {
         addNews(e).then(() => {loadStatus.style.top = "-250px";})
@@ -124,7 +124,7 @@ window.onmessage = async (e) => {
 }
 
 newsDiv.onscroll = () => {
-    let isBottom = newsDiv.scrollTop === (newsDiv.scrollHeight -newsDiv.offsetHeight) ? true: false
+    let isBottom = newsDiv.scrollTop >= (newsDiv.scrollHeight -newsDiv.offsetHeight - 500) ? true: false
     if(isBottom === true && canAddData === true) {
         getNews()
         canAddData = false
@@ -166,5 +166,16 @@ function getNumberOfUsers() {
 
 
 setInterval(() => {
-    getNumberOfUsers();
-}, 3000)
+    if(document.querySelector(".active").id == "globalChatButton")
+        getNumberOfUsers()
+}, 2000)
+
+
+function fileSelectDia() {
+    let props = {}
+    window.appApi.showOpenDialog(props)
+}
+
+window.appApi.showOpenDialogOn("file-selected", (path) => {
+    console.log(path);
+})

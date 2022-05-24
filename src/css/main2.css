@@ -148,6 +148,7 @@
     border: 1px solid var(--msg-border);
     background-color: var(--input-msg-background);
     color: var(--text-msg-color);
+    overflow-x: hidden;
     font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
     /* "Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif" */
 }
@@ -160,8 +161,16 @@
     z-index: 5 !important;
 }
 
+.msg-btns > i {
+    transition: all 300ms;
+}
+
 .msg-btns:hover{
     cursor: pointer;
+}
+
+.msg-btns:hover > i {
+    color: var(--complementary-color);
 }
 
 .msg-icons {

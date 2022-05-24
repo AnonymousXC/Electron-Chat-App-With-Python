@@ -31,3 +31,16 @@ window.onmessage = async (e) => {
         document.getElementById("status").innerText = e.data[0]
     }
 }
+
+function selectFile() {
+    window.appApi.showOpenDialog({
+        properties: ['openFile'],
+        filters: [
+            { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
+        ]
+    })
+}
+
+window.appApi.showOpenDialogOn("file-selected", (path) => {
+    document.getElementById("profile-pic") .value = path
+})
