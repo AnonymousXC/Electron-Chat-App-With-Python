@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="stylesheet" href="../css/titlebar.css">
+    <link rel="stylesheet" href="../css/registerUser.css">
+    <script src="../js/titlebar/injectTitlebar.js" defer></script>
+    <script src="../js/titlebar/titlebar.js" defer></script>
+    <script src="../js/registerUser.js" defer></script>
+    <title>User Registration</title>
+</head>
+<body>
+    <div class="full-win">
+        <div class="center-wrap">
+            <div class="flex-wrap">
+                <p class="indicator"><Strong>Name : </Strong></p>
+                <input type="text" id="username" placeholder="Username">
+            </div> <br>
+            <div class="flex-wrap">
+                <p class="indicator"><strong>Email : </strong></p>
+                <input type="text" id="email" placeholder="Email address">
+            </div> <br>
+            <div class="flex-wrap">
+                <p class="indicator"><strong>Password : </strong></p>
+                <input type="password" id="password" placeholder="Password">
+            </div> <br>
+            <div class="flex-wrap">
+                <p class="indicator"><strong>Profile Pic : </strong></p>
+                <input type="url" id="profile-pic" placeholder="Pic URL or file path">
+                <button class="select-pic" onclick="selectFile()">
+                    <img src="../resources/icons/img-icon.svg" alt="" height="36" width="auto">
+                </button>
+            </div>
+            <div class="indi-div">
+                <p class="indicator" id="status" style="padding:5px;text-align: center;">
+                </p>
+            </div>
+            <button class="regBtn" onclick="registerUser()">Register</button>
+        </div>
+    </div>
+</body>
+</html>

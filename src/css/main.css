@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
 html, * {
     margin: 0;
     padding: 0;
@@ -9,67 +12,8 @@ html, * {
     --complementary-color: #4f9fee;
 }
 
-/* Title Bar Styles */
-
-#titleBar {
-    width: 100vw;
-    height: 35px;
-    background-color: var(--titlebar-bg);
-    position: relative;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 4px solid  var(--border-color);
-    -webkit-user-select: none;
-    -webkit-app-region: drag;
-}
-
-.barBtn {
-    background-color: transparent;
-    border: none;
-    width: 38px;
-    height: 35px !important;
-    outline: none !important;
-    user-select: none;
-    -webkit-app-region: no-drag;
-}
-
-.barBtn > i {
-    color: var(--text-color);
-    font-size: 25px;
-}
-
-.barBtn:hover { 
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.rightItems > button:last-child:hover{
-    background-color: var(--complementary-color);
-}
-
-.rightItems {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.leftItems {
-    display: flex;
-    align-items: center;
-    -webkit-app-region: no-drag;
-}
-
-.leftItems > p {
-    color: var(--text-color);
-    font-size: 18px;
-    padding-left: 5px;
-}
-
-.icon {
-    width: auto;
-    height: 25px;
-    padding-left: 8px;
-    padding-right: 8px;
+body {
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
 }
 
 /* Side bar Styles */
@@ -86,6 +30,7 @@ html, * {
 }
 
 
+
 /* Main App Styles */
 
 .mainChat {
@@ -97,6 +42,149 @@ html, * {
     bottom: 0;
 }
 
+/* Tabs Style */
+
+.tablinks {
+    position: relative;
+    width: 97%;
+    height: 60px;
+    font-size: 18px;
+    color: var(--text-color);
+    background-color: var(--titlebar-bg);
+    border: none;
+    margin-top: 1.5% !important;
+    left: 50%;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    transition: all 550ms;
+    user-select: none;
+    cursor: pointer;
+}
+
+.tablinks:hover {
+    background-color: var(--complementary-color);
+    color: black;
+}
+
+/* Tab Contents Styles */
+
+.tabcontent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: fadeEffect 1s;
+}
+
+/* News Style */
+#News {
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: normal;
+}
+
+.newsTab:nth-of-type(1) {
+    margin-top: 60px !important;
+}
+
+
+.newsTab {
+    display: flex;
+    position: relative !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 96%;
+    height: 220px;
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    margin-top: 10px !important;
+    margin: 0 auto;
+    overflow: hidden;
+    color: white;
+    transition: all 250ms;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.newsTab > div {
+    padding-left: 10px;
+}
+
+.newsTab > div > img {
+    height: 200px;
+    width: auto;
+    float: left; 
+}
+
+.newsTab > div > div  {
+    height: 100%;
+}
+
+.author {
+    text-align: end;
+    padding-right: 25px;
+    padding-top: 10vh;
+}
+
+.newsCon {
+    padding-top: 18px;
+    align-self: flex-start; 
+    width: 100%;
+}
+
+.newsCon > h3 {
+    padding-bottom: 15px;
+}
+
+.newsTab:hover {
+    background-color: var(--complementary-color);
+    color: black;
+    transform: scale(1.02);
+}
+
+
+
+/* Scroll Bar Styles */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(85, 85, 85);
+} 
+
+
+/* Loading Status Styles */
+#loading-status {
+    position: absolute;
+    left: 50%;
+    z-index: 20;
+    width: 100px;
+    height: 20px;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    background-color: var(--complementary-color);
+    display: flex;
+    gap: 10px;
+    transition: all 250ms;
+    top: -250px;
+    user-select: none;
+}
+
+
+
+/* Main App Media Query */
+
 @media screen and (min-width: 1000px){
     .side-bar {
         width: 350px;
@@ -104,4 +192,16 @@ html, * {
     .mainChat {
         width: calc(100% - 354px);
     }
+}
+
+/* Animations */
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.load-status {
+    position: relative;
+    bottom: 0 !important;
 }

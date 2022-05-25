@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="stylesheet" href="../css/titlebar.css">
+    <link rel="stylesheet" href="../css/signin.css">
+    <script src="../js/titlebar/injectTitlebar.js" defer></script>
+    <script src="../js/titlebar/titlebar.js" defer></script>
+    <script src="../js/signIn.js"></script>
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="full-win">
+        <div class="center-wrap">
+            <div class="flex-wrap">
+                <p class="indicator"><Strong>Username : </Strong></p>
+                <input type="text" id="username">
+            </div> <br>
+            <div class="flex-wrap">
+                <p class="indicator"><strong>Email : </strong></p>
+                <input type="text" id="email">
+            </div> <br>
+            <!-- <div class="flex-wrap">
+                <p class="indicator"><strong>Password : </strong></p>
+                <input type="password" id="password">
+            </div> -->
+            <div class="indi-div">
+                <p class="indicator" id="status" style="padding:5px;text-align: center;">
+                </p>
+            </div>
+            <button class="signBtn" onclick="signIn()">Sign In</button>
+        </div>
+    </div>
+</body>
+</html>

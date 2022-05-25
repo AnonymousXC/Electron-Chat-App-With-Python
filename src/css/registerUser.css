@@ -1,0 +1,81 @@
+
+body {
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
+    user-select: none !important;
+}
+
+
+.barBtn:not(:last-child) {
+    display: none;
+}
+
+.full-win {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 39px);
+    background-color: var(--bg-main);
+}
+
+.indicator {
+    font-size: larger;
+    color: var(--primary-strong-color);
+}
+
+.flex-wrap {
+    display: inline-flex;
+    padding: 10px;
+}
+
+input {
+    background-color: var(--input-msg-background);
+    border: 1px solid var(--msg-border);
+    outline: none !important;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: var(--text-msg-color);
+    border-radius: 8px;
+}
+
+.center-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+.regBtn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: x-large;
+    background-color: var(--primary-strong-color);
+    border: none;
+    outline: none !important;
+    padding: 12px;
+    border-radius: 50px;
+    margin-top: 15px;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+.regBtn:hover {
+    background-color: var(--complementary-color);
+    color: var(--primary-strong-color);
+}
+
+#loading-gif {
+    margin-left: 10px;
+    transform: translateY(25%);
+}
+
+.select-pic {
+    background-color: transparent;
+    border: none;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+    cursor: pointer;
+}
