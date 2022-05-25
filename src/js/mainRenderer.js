@@ -122,6 +122,10 @@ window.onmessage = async (e) => {
         document.getElementById("online-user").innerText = "Online : " + e.data[0]
     }
 
+    if(e.data[dataLen] === "user_leave.py") {
+        window.appApi.closeMain();
+    }
+
 }
 
 newsDiv.onscroll = () => {

@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require("path");
+const pythonShell = require("python-shell")
 
 
 let win;
@@ -19,10 +20,18 @@ function createWindow() {
         title: 'Chat App',
     });
 
+    
     win.setTitle('Chat App');
     win.removeMenu();
     win.loadFile(path.join(__dirname, "html", "index.html"));
     win.webContents.openDevTools();
+    win.on("close", (event) => {
+        if(win.isVisible() === false) return;
+        event.preventDefault();
+        win.hide();
+        win.webContents.send("closing-window-logout")
+        console.log("Adsad");
+    })
 }
 
 app.whenReady().then(createWindow);
@@ -114,6 +123,10 @@ ipcMain.on("maximizeWindow", (e) => {
 ipcMain.handle("isMax", async (e, args) => {
     return BrowserWindow.getFocusedWindow().isMaximized().valueOf()
 });
+
+ipcMain.on("close-main-window", (e) => {
+    win.close()
+})
 
 ipcMain.once("offline", () => {
     BrowserWindow.getFocusedWindow().loadFile(path.join(__dirname, "html", "offline.html"))

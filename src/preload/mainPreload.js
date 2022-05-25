@@ -8,6 +8,7 @@ let appApi = {
     minWin: () => ipcRenderer.send("minimizeWindow", null),
     maxWin: () => ipcRenderer.send("maximizeWindow", null),
     isMax: (args) => ipcRenderer.invoke("isMax", args),
+    closeMain: () => ipcRenderer.send("close-main-window", null),
     pythonRun: (path, args) => {
         PythonShell.run(path, args, (err, res) =>  {
             if(err) throw err;
@@ -50,6 +51,17 @@ ipcRenderer.on("setUsername", (e, data) => {
     appApi.pythonRun(path, options)
 
 });
+
+ipcRenderer.on("closing-window-logout", (e) => {
+    let username = document.getElementById("name-user").innerText
+    let path = "src/python/firebase/user_leave.py"
+    let options = {
+        mode: 'text',
+        args: [username],
+        pythonOptions: ['-u'],
+    }
+    appApi.pythonRun(path, options)
+})
 
 
 
