@@ -1,21 +1,18 @@
-import firebase_admin
-from firebase_admin import credentials
 from firebase_admin import auth
-from link import link
 import sys
+from add_profile_pic import *
 
 
-cred = credentials.Certificate("src\\python\\firebase\\creds.json")
-
-firebase_admin.initialize_app(cred,{
-    "databaseURL" : link
-})
-
-
-def register(display_name, password, email, pfp_url):
+def register(display_name, password, email, pfp_path):
 
     try:
-        auth.create_user(uid=display_name, password=password, email=email, photo_url = pfp_url)
+        if pfp_path.startswith("https://") or pfp_path.startswith("http://"):
+            pfp = pfp_path
+        
+        else:
+            pfp = upload_image(display_name, pfp_path)
+
+        auth.create_user(uid=display_name, password=password, email=email, photo_url = pfp)
 
     except auth.UidAlreadyExistsError:
         return "Username already taken try another"
@@ -39,8 +36,8 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     email = sys.argv[3]
-    pfp_url = sys.argv[4]
+    pfp_path = sys.argv[4] # either url or local file path works
 
     if password != "" and email != "" and username != "":
-        print(register(username, password, email, pfp_url))
+        print(register(username, password, email, pfp_path))
         print("registration.py")
