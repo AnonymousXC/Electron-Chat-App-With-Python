@@ -4,6 +4,7 @@ Requires Node Version 18.0.0 or greator
 
 npm install electron@latest
 npm install python-shell //in local file directory
+npm install electron-store //in local file directory
 and many more...
 
 //Testing and Debugging

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AnonymousXC/Electron-Chat-App-With-Python#readme",
   "dependencies": {
+    "electron-store": "^8.0.1",
     "python-shell": "^3.0.1"
   }
 }
