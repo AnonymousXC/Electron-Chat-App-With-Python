@@ -5,19 +5,29 @@ from add_profile_pic import *
 
 def register(display_name, password, email, pfp_path):
 
+    path = False
+
     try:
         if pfp_path.startswith("https://") or pfp_path.startswith("http://"):
             pfp = pfp_path
         
         else:
+            path = True
             pfp = upload_image(display_name, pfp_path)
 
         auth.create_user(uid=display_name, password=password, email=email, photo_url = pfp)
 
     except auth.UidAlreadyExistsError:
+        if path:
+            del_on_error(username, pfp_path)
+
         return "Username already taken try another"
 
     except ValueError:
+
+        if path:
+            del_on_error(username, pfp_path)
+
         if len(password) < 6:
             return "Password must be at least 6 characters long"
 
@@ -25,10 +35,21 @@ def register(display_name, password, email, pfp_path):
             return "Invalid email address"
             
     except auth.EmailAlreadyExistsError:
+        
+        if path:
+            del_on_error(username, pfp_path)
+
         return "An account already exists with that email"
     
     else:
         return "Account Succesfully made"
+
+
+def del_on_error(username, pfp_path):
+    ext= extension(pfp_path)
+    bucket = storage.bucket()
+    file = bucket.blob(f"{username}_pfp_img.{ext}")
+    file.delete()
 
 
 
