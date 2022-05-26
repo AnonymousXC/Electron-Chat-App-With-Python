@@ -1,9 +1,10 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require("path");
-const pythonShell = require("python-shell")
-
+const fs = require("fs");
+const { saveUsername, saveEmail, saveTime, readDataUET, saveProfilePic } = require("./extra/store")
 
 let win;
+let lastOpened;
 
 function createWindow() {
     win = new BrowserWindow({
@@ -30,11 +31,12 @@ function createWindow() {
         event.preventDefault();
         win.hide();
         win.webContents.send("closing-window-logout")
-        console.log("Adsad");
+        console.log("Window Hidden");
     })
 }
 
 app.whenReady().then(createWindow);
+app.whenReady().then(getLastTime);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -145,6 +147,10 @@ ipcMain.on("open-sign-in-win", () => {
 });
 
 ipcMain.on("got-username", (e, data) => {
+    saveUsername(data.username);
+    saveEmail(data.email);
+    saveProfilePic(data.pfp_url)
+    
     win.webContents.send("setUsername", data)
 });
 
@@ -154,4 +160,16 @@ ipcMain.on('open-dialog', (event, properties) => {
         if(data)
             event.reply("file-selected", data.filePaths[0])
     })
-})
+});
+
+
+function getLastTime() {
+    lastOpened = readDataUET().date;
+    let currentDate = new Date().getDate();
+    saveTime(currentDate)
+    let diff = currentDate - lastOpened
+    if(diff <= 2 && readDataUET().username && readDataUET().email) {
+        win.webContents.send("auto-signIn", readDataUET())
+    }
+}
+

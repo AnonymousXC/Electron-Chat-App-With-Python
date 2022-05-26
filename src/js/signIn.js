@@ -1,3 +1,5 @@
+
+
 function signIn() {
 
     document.getElementById("status").innerHTML = `Logging In <img src="../resources/gifs/cupertino_activity_indicator.gif" alt="" width="23px" id="loading-gif">`
@@ -13,6 +15,7 @@ function signIn() {
         pythonOptions: ['-u'],
     }
     window.appApi.pythonRun(path, options)
+    // setNameEmail(username, email)
 }
 
 

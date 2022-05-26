@@ -1,5 +1,5 @@
-const { contextBridge, ipcRenderer } = require("electron")
-const {PythonShell} = require("python-shell")
+const { contextBridge, ipcRenderer } = require("electron");
+const {PythonShell} = require("python-shell");
 
 
 let appApi = {
@@ -49,7 +49,6 @@ ipcRenderer.on("setUsername", (e, data) => {
         pythonOptions: ['-u'],
     }
     appApi.pythonRun(path, options)
-
 });
 
 ipcRenderer.on("closing-window-logout", (e) => {
@@ -61,8 +60,11 @@ ipcRenderer.on("closing-window-logout", (e) => {
         pythonOptions: ['-u'],
     }
     appApi.pythonRun(path, options)
-})
+});
 
+ipcRenderer.on("auto-signIn", (e, data) => {
+    ipcRenderer.send("got-username", data)
+});
 
 
 appApi.isOnline()
