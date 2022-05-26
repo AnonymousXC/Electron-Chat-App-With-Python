@@ -27,7 +27,7 @@ def signIn(username_from_user, email_from_user):
     
     else:
         if username == username_from_user:
-            return json.dumps({"username": username, "pfp_url": pfp_url})
+            return json.dumps({"username": username, "pfp_url": pfp_url, "email": email_from_user})
         else:
             return  json.dumps("Invaild Information")
 
