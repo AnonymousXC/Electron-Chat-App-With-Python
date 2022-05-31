@@ -1,10 +1,24 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const Notify = require("electron").Notification
 const path = require("path");
 const fs = require("fs");
 const { saveUsername, saveEmail, saveTime, readDataUET, saveProfilePic } = require("./extra/store")
 
 let win;
 let lastOpened;
+
+const notificationXmlString = `
+<toast>
+  <visual>
+        <binding template="ToastImageAndText01">
+            <image id="1" src="${path.join(__dirname, 'resources/icons/icon-dummy.png')}" alt="img"/>
+            <text id="1">Background Processing</text>
+            <text placement="attribution">Chat app is running in background and will exit automatically, after sometime. </text>
+        </binding>  
+    </visual>
+</toast>
+`;
+
 
 function createWindow() {
     win = new BrowserWindow({
@@ -18,6 +32,7 @@ function createWindow() {
             // nodeIntegration: true,
             preload: path.join(__dirname, "preload" , "mainPreload.js")
         },
+        icon: path.join(__dirname, "resources/icons/icon-dummy.png"),
         title: 'Chat App',
     });
 
@@ -31,8 +46,23 @@ function createWindow() {
         event.preventDefault();
         win.hide();
         win.webContents.send("closing-window-logout")
-        console.log("Window Hidden");
-    })
+
+        // if(process.platform === "win32") {
+        //     new Notify({toastXml: notificationXmlString}).show()
+        // }
+        // else 
+        //     new Notify({title: "Background Processing \n", body: "Chat app is running in background and will exit automatically, after sometime. \n \n"}).show()
+
+        new Notify({
+            title: "Background Processing",
+            body: "Chat app is running in background and will exit automatically, after sometime.",
+            icon: __dirname + '/resources/icons/icon-dummy.png',
+            hasReply: true,
+        }).show()
+
+    });
+
+    app.setAppUserModelId(app.name.replace("-", " ").toLocaleUpperCase())
 }
 
 app.whenReady().then(createWindow);

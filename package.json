@@ -1,5 +1,6 @@
 {
-  "name": "electron-chat-app-with-python",
+  "name": "electron-chat",
+  "icon": "src/resources/icons/icon-dummy.png",
   "version": "1.7.0",
   "description": "A chat app made on electron with python integration.",
   "main": "src/index.ts",

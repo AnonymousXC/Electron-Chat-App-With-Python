@@ -1,5 +1,6 @@
 const { contextBridge, ipcRenderer } = require("electron");
 const {PythonShell} = require("python-shell");
+const pathMod = require("path")
 
 
 let appApi = {
@@ -10,6 +11,8 @@ let appApi = {
     isMax: (args) => ipcRenderer.invoke("isMax", args),
     closeMain: () => ipcRenderer.send("close-main-window", null),
     pythonRun: (path, args) => {
+        let absPath = pathMod.join(__dirname, "../", "../");
+        args.scriptPath = absPath;
         PythonShell.run(path, args, (err, res) =>  {
             if(err) throw err;
             window.postMessage(res, "*")
