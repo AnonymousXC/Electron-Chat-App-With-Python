@@ -11,11 +11,21 @@ let appApi = {
     isMax: (args) => ipcRenderer.invoke("isMax", args),
     closeMain: () => ipcRenderer.send("close-main-window", null),
     pythonRun: (path, args) => {
+
         let absPath = pathMod.join(__dirname, "../", "../");
         args.scriptPath = absPath;
+
+        let scriptName = path.split("/").pop();
+        console.log(scriptName);
+
         PythonShell.run(path, args, (err, res) =>  {
-            if(err) throw err;
-            window.postMessage(res, "*")
+            if(err) {
+                if(scriptName === "user_leave.py") {
+                    ipcRenderer.send("close-main-window")
+                }
+                throw err;
+            };
+            window.postMessage(res, "*");
         })
     },
     openNewsInWin: (url) => {

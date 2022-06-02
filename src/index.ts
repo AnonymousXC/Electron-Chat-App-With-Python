@@ -7,17 +7,6 @@ const { saveUsername, saveEmail, saveTime, readDataUET, saveProfilePic } = requi
 let win;
 let lastOpened;
 
-const notificationXmlString = `
-<toast>
-  <visual>
-        <binding template="ToastImageAndText01">
-            <image id="1" src="${path.join(__dirname, 'resources/icons/icon-dummy.png')}" alt="img"/>
-            <text id="1">Background Processing</text>
-            <text placement="attribution">Chat app is running in background and will exit automatically, after sometime. </text>
-        </binding>  
-    </visual>
-</toast>
-`;
 
 
 function createWindow() {
@@ -158,7 +147,7 @@ ipcMain.handle("isMax", async (e, args) => {
 
 ipcMain.on("close-main-window", (e) => {
     win.close()
-})
+});
 
 ipcMain.once("offline", () => {
     BrowserWindow.getFocusedWindow().loadFile(path.join(__dirname, "html", "offline.html"))
